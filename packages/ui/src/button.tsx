@@ -8,13 +8,15 @@ interface ButtonProps {
   appName: string;
 }
 
-export const Button = ({ children, className, appName }: ButtonProps) => {
+const Button = ({ children, className, appName }: ButtonProps) => {
   return (
     <button
-      className={className}
+      className={"flex bg-[red]"}
       onClick={() => alert(`Hello from your ${appName} app!`)}
     >
       {children}
     </button>
   );
 };
+
+export default Button;
