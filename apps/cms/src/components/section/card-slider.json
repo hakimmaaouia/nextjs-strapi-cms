@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_section_card_sliders",
+  "info": {
+    "displayName": "CardSlider"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    }
+  }
+}
