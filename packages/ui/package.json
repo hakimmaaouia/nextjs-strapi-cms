@@ -2,13 +2,11 @@
   "name": "@repo/ui",
   "version": "0.0.0",
   "private": true,
-  "exports": {
-    "./button": "./src/button.tsx",
-    "./card": "./src/card.tsx",
-    "./code": "./src/code.tsx"
-  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "lint": "eslint . --max-warnings 0",
+    "build": "tsc",
     "generate:component": "turbo gen react-component"
   },
   "devDependencies": {
