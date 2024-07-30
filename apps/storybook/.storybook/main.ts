@@ -12,9 +12,9 @@ function getAbsolutePath(value: string): any {
 const config: StorybookConfig = {
   stories: [
     {
-      directory: "../../../packages/ui/src",
+      directory: "../../../packages/ui/src/",
       titlePrefix: "UI",
-      files: "*.stories.*",
+      files: "**/*.stories.*",
     },
   ],
   addons: [
