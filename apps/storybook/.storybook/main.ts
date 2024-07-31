@@ -14,7 +14,7 @@ const config: StorybookConfig = {
     {
       directory: "../../../packages/ui/src/",
       titlePrefix: "UI",
-      files: "**/*.stories.*",
+      files: "**/*.@(mdx|stories.*)",
     },
   ],
   addons: [
@@ -23,15 +23,13 @@ const config: StorybookConfig = {
     getAbsolutePath("@storybook/addon-essentials"),
     getAbsolutePath("@chromatic-com/storybook"),
     getAbsolutePath("@storybook/addon-interactions"),
-    "@storybook/addon-styling-webpack",
+    getAbsolutePath("@storybook/addon-styling-webpack"),
   ],
   framework: {
     name: getAbsolutePath("@storybook/nextjs"),
     options: {},
   },
-  docs: {
-    autodocs: "tag",
-  },
+  docs: {},
   staticDirs: ["../public"],
 };
 export default config;
