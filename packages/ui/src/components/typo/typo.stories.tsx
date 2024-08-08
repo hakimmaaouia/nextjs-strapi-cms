@@ -1,5 +1,5 @@
-import { Meta, StoryObj } from "@storybook/react";
-import { Typo } from "./index";
+import type { Meta, StoryObj } from "@storybook/react";
+import Typo from "./";
 
 const meta: Meta<typeof Typo> = {
   title: "Components/Typo",
@@ -12,7 +12,7 @@ const meta: Meta<typeof Typo> = {
     },
     size: {
       control: "select",
-      options: ["h1", "h2", "h3", "h4", "p", "span", "blockquote"],
+      options: ["h1", "h2", "h3", "h4", "h5", "p", "span", "blockquote"],
     },
     weight: {
       control: "select",
@@ -30,8 +30,12 @@ const meta: Meta<typeof Typo> = {
       control: "select",
       options: ["italic", "underline", "strikethrough", "highlight"],
     },
+    color: {
+      control: "select",
+      options: ["white", "black", "gray"],
+    },
     highlightedIndex: {
-      control: "array",
+      control: "object",
     },
     children: {
       control: "text",
@@ -98,14 +102,14 @@ export const SpanStrikethroughHighlight: Story = {
     size: "span",
     weight: "normal",
     highlightedIndex: [2, 4],
-    highlight: "strikethrough",
+    highlight: "highlight",
     children: "This is a strikethrough highlighted span text.",
   },
 };
 
 export const H4BlackHighlight: Story = {
   args: {
-    as: "h4",
+    as: "h3",
     size: "h4",
     weight: "black",
     highlightedIndex: [0],
