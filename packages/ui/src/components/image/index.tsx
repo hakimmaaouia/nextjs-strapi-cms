@@ -53,4 +53,5 @@ const Image: FC<IImageProps> = ({
   );
 };
 
-export { Image, imageVariants };
+export { imageVariants };
+export default Image;
