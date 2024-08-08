@@ -1,0 +1,36 @@
+{
+  "collectionName": "components_component_buttons",
+  "info": {
+    "displayName": "Button"
+  },
+  "options": {},
+  "attributes": {
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "submit",
+        "button",
+        "reset"
+      ]
+    },
+    "target": {
+      "type": "enumeration",
+      "enum": [
+        "_blank",
+        "_self",
+        "_parent",
+        "_top"
+      ]
+    },
+    "disabled": {
+      "type": "boolean",
+      "default": false
+    },
+    "href": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    }
+  }
+}

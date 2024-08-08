@@ -1,0 +1,30 @@
+{
+  "collectionName": "components_component_typos",
+  "info": {
+    "displayName": "Typo"
+  },
+  "options": {},
+  "attributes": {
+    "as": {
+      "type": "enumeration",
+      "enum": [
+        "h1",
+        "h2",
+        "h3",
+        "h4",
+        "p",
+        "span",
+        "blockquote"
+      ],
+      "required": false
+    },
+    "text": {
+      "type": "text",
+      "required": true
+    },
+    "highlightedIndex": {
+      "type": "string",
+      "regex": "^\\d(,\\d)*$"
+    }
+  }
+}

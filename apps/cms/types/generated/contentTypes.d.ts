@@ -391,7 +391,9 @@ export interface ApiPagePage extends Schema.CollectionType {
           localized: true;
         };
       }>;
-    layout: Attribute.DynamicZone<['section.card-slider']> &
+    layout: Attribute.DynamicZone<
+      ['section.card-slider', 'section.hero1', 'section.hero2']
+    > &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;

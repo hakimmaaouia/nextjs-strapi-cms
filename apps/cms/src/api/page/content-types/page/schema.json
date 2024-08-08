@@ -35,7 +35,9 @@
     "layout": {
       "type": "dynamiczone",
       "components": [
-        "section.card-slider"
+        "section.card-slider",
+        "section.hero1",
+        "section.hero2"
       ],
       "pluginOptions": {
         "i18n": {

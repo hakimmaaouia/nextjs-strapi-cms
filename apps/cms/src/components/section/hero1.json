@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_section_hero1s",
+  "info": {
+    "displayName": "Hero1"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "component",
+      "repeatable": false,
+      "component": "component.typo"
+    },
+    "description": {
+      "type": "component",
+      "repeatable": false,
+      "component": "component.typo"
+    },
+    "firstButton": {
+      "type": "component",
+      "repeatable": false,
+      "component": "component.button"
+    },
+    "secondButton": {
+      "type": "component",
+      "repeatable": false,
+      "component": "component.button"
+    }
+  }
+}
