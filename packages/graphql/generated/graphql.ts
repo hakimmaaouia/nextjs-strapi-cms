@@ -50,10 +50,53 @@ export type BooleanFilterInput = {
   startsWith?: InputMaybe<Scalars['Boolean']['input']>;
 };
 
+export type ComponentComponentButton = {
+  __typename?: 'ComponentComponentButton';
+  disabled?: Maybe<Scalars['Boolean']['output']>;
+  href?: Maybe<Scalars['String']['output']>;
+  id: Scalars['ID']['output'];
+  target?: Maybe<Enum_Componentcomponentbutton_Target>;
+  title?: Maybe<Scalars['String']['output']>;
+  type?: Maybe<Enum_Componentcomponentbutton_Type>;
+};
+
+export type ComponentComponentImage = {
+  __typename?: 'ComponentComponentImage';
+  id: Scalars['ID']['output'];
+  image?: Maybe<UploadFileEntityResponse>;
+};
+
+export type ComponentComponentTypo = {
+  __typename?: 'ComponentComponentTypo';
+  as?: Maybe<Enum_Componentcomponenttypo_As>;
+  highlightedIndex?: Maybe<Scalars['String']['output']>;
+  id: Scalars['ID']['output'];
+  text: Scalars['String']['output'];
+};
+
 export type ComponentSectionCardSlider = {
   __typename?: 'ComponentSectionCardSlider';
   id: Scalars['ID']['output'];
   title?: Maybe<Scalars['String']['output']>;
+};
+
+export type ComponentSectionHero1 = {
+  __typename?: 'ComponentSectionHero1';
+  description?: Maybe<ComponentComponentTypo>;
+  firstButton?: Maybe<ComponentComponentButton>;
+  id: Scalars['ID']['output'];
+  secondButton?: Maybe<ComponentComponentButton>;
+  title?: Maybe<ComponentComponentTypo>;
+};
+
+export type ComponentSectionHero2 = {
+  __typename?: 'ComponentSectionHero2';
+  description?: Maybe<ComponentComponentTypo>;
+  firstButton?: Maybe<ComponentComponentButton>;
+  id: Scalars['ID']['output'];
+  image?: Maybe<ComponentComponentImage>;
+  secondButton?: Maybe<ComponentComponentButton>;
+  title?: Maybe<ComponentComponentTypo>;
 };
 
 export type ComponentUtilSeo = {
@@ -218,6 +261,29 @@ export type DateTimeFilterInput = {
   startsWith?: InputMaybe<Scalars['DateTime']['input']>;
 };
 
+export enum Enum_Componentcomponentbutton_Target {
+  Blank = 'blank',
+  Parent = 'parent',
+  Self = 'self',
+  Top = 'top'
+}
+
+export enum Enum_Componentcomponentbutton_Type {
+  Button = 'button',
+  Reset = 'reset',
+  Submit = 'submit'
+}
+
+export enum Enum_Componentcomponenttypo_As {
+  Blockquote = 'blockquote',
+  H1 = 'h1',
+  H2 = 'h2',
+  H3 = 'h3',
+  H4 = 'h4',
+  P = 'p',
+  Span = 'span'
+}
+
 export enum Enum_Contentreleasesreleaseaction_Type {
   Publish = 'publish',
   Unpublish = 'unpublish'
@@ -268,7 +334,7 @@ export type FloatFilterInput = {
   startsWith?: InputMaybe<Scalars['Float']['input']>;
 };
 
-export type GenericMorph = ComponentSectionCardSlider | ComponentUtilSeo | ContentReleasesRelease | ContentReleasesReleaseAction | I18NLocale | Page | UploadFile | UploadFolder | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsUser;
+export type GenericMorph = ComponentComponentButton | ComponentComponentImage | ComponentComponentTypo | ComponentSectionCardSlider | ComponentSectionHero1 | ComponentSectionHero2 | ComponentUtilSeo | ContentReleasesRelease | ContentReleasesReleaseAction | I18NLocale | Page | UploadFile | UploadFolder | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsUser;
 
 export type I18NLocale = {
   __typename?: 'I18NLocale';
@@ -673,7 +739,7 @@ export type PageInput = {
   title?: InputMaybe<Scalars['String']['input']>;
 };
 
-export type PageLayoutDynamicZone = ComponentSectionCardSlider | Error;
+export type PageLayoutDynamicZone = ComponentSectionCardSlider | ComponentSectionHero1 | ComponentSectionHero2 | Error;
 
 export type PageRelationResponseCollection = {
   __typename?: 'PageRelationResponseCollection';
@@ -1229,7 +1295,48 @@ export type PagesQueryVariables = Exact<{
 }>;
 
 
-export type PagesQuery = { __typename?: 'Query', pages?: { __typename?: 'PageEntityResponseCollection', data: Array<{ __typename?: 'PageEntity', attributes?: { __typename?: 'Page', title?: string | null, path?: string | null, seo?: { __typename?: 'ComponentUtilSeo', title?: string | null, description?: string | null } | null, layout?: Array<{ __typename: 'ComponentSectionCardSlider', id: string, title?: string | null } | { __typename: 'Error' } | null> | null } | null }> } | null };
+export type PagesQuery = { __typename?: 'Query', pages?: { __typename?: 'PageEntityResponseCollection', data: Array<{ __typename?: 'PageEntity', attributes?: { __typename?: 'Page', title?: string | null, path?: string | null, seo?: { __typename?: 'ComponentUtilSeo', title?: string | null, description?: string | null } | null, layout?: Array<{ __typename: 'ComponentSectionCardSlider' } | (
+          { __typename: 'ComponentSectionHero1' }
+          & { ' $fragmentRefs'?: { 'ComponentSectionHero1Fragment': ComponentSectionHero1Fragment } }
+        ) | (
+          { __typename: 'ComponentSectionHero2' }
+          & { ' $fragmentRefs'?: { 'ComponentSectionHero2Fragment': ComponentSectionHero2Fragment } }
+        ) | { __typename: 'Error' } | null> | null } | null }> } | null };
 
+export type ComponentComponentButtonFragment = { __typename?: 'ComponentComponentButton', id: string, title?: string | null, type?: Enum_Componentcomponentbutton_Type | null, target?: Enum_Componentcomponentbutton_Target | null, href?: string | null, disabled?: boolean | null } & { ' $fragmentName'?: 'ComponentComponentButtonFragment' };
 
-export const PagesDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"Pages"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"locale"}},"type":{"kind":"NamedType","name":{"kind":"Name","value":"I18NLocaleCode"}}},{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"filters"}},"type":{"kind":"NamedType","name":{"kind":"Name","value":"PageFiltersInput"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"pages"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"filters"},"value":{"kind":"Variable","name":{"kind":"Name","value":"filters"}}},{"kind":"Argument","name":{"kind":"Name","value":"locale"},"value":{"kind":"Variable","name":{"kind":"Name","value":"locale"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"data"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"attributes"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"path"}},{"kind":"Field","name":{"kind":"Name","value":"seo"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"description"}}]}},{"kind":"Field","name":{"kind":"Name","value":"layout"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"__typename"}},{"kind":"InlineFragment","typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"ComponentSectionCardSlider"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"title"}}]}}]}}]}}]}}]}}]}}]} as unknown as DocumentNode<PagesQuery, PagesQueryVariables>;
+export type ComponentComponentTypoFragment = { __typename?: 'ComponentComponentTypo', id: string, text: string, as?: Enum_Componentcomponenttypo_As | null, highlightedIndex?: string | null } & { ' $fragmentName'?: 'ComponentComponentTypoFragment' };
+
+export type ComponentSectionHero1Fragment = { __typename?: 'ComponentSectionHero1', title?: (
+    { __typename?: 'ComponentComponentTypo' }
+    & { ' $fragmentRefs'?: { 'ComponentComponentTypoFragment': ComponentComponentTypoFragment } }
+  ) | null, description?: (
+    { __typename?: 'ComponentComponentTypo' }
+    & { ' $fragmentRefs'?: { 'ComponentComponentTypoFragment': ComponentComponentTypoFragment } }
+  ) | null, firstButton?: (
+    { __typename?: 'ComponentComponentButton' }
+    & { ' $fragmentRefs'?: { 'ComponentComponentButtonFragment': ComponentComponentButtonFragment } }
+  ) | null, secondButton?: (
+    { __typename?: 'ComponentComponentButton' }
+    & { ' $fragmentRefs'?: { 'ComponentComponentButtonFragment': ComponentComponentButtonFragment } }
+  ) | null } & { ' $fragmentName'?: 'ComponentSectionHero1Fragment' };
+
+export type ComponentSectionHero2Fragment = { __typename?: 'ComponentSectionHero2', title?: (
+    { __typename?: 'ComponentComponentTypo' }
+    & { ' $fragmentRefs'?: { 'ComponentComponentTypoFragment': ComponentComponentTypoFragment } }
+  ) | null, description?: (
+    { __typename?: 'ComponentComponentTypo' }
+    & { ' $fragmentRefs'?: { 'ComponentComponentTypoFragment': ComponentComponentTypoFragment } }
+  ) | null, firstButton?: (
+    { __typename?: 'ComponentComponentButton' }
+    & { ' $fragmentRefs'?: { 'ComponentComponentButtonFragment': ComponentComponentButtonFragment } }
+  ) | null, secondButton?: (
+    { __typename?: 'ComponentComponentButton' }
+    & { ' $fragmentRefs'?: { 'ComponentComponentButtonFragment': ComponentComponentButtonFragment } }
+  ) | null } & { ' $fragmentName'?: 'ComponentSectionHero2Fragment' };
+
+export const ComponentComponentTypoFragmentDoc = {"kind":"Document","definitions":[{"kind":"FragmentDefinition","name":{"kind":"Name","value":"ComponentComponentTypo"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"ComponentComponentTypo"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"text"}},{"kind":"Field","name":{"kind":"Name","value":"as"}},{"kind":"Field","name":{"kind":"Name","value":"highlightedIndex"}}]}}]} as unknown as DocumentNode<ComponentComponentTypoFragment, unknown>;
+export const ComponentComponentButtonFragmentDoc = {"kind":"Document","definitions":[{"kind":"FragmentDefinition","name":{"kind":"Name","value":"ComponentComponentButton"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"ComponentComponentButton"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"type"}},{"kind":"Field","name":{"kind":"Name","value":"target"}},{"kind":"Field","name":{"kind":"Name","value":"href"}},{"kind":"Field","name":{"kind":"Name","value":"disabled"}}]}}]} as unknown as DocumentNode<ComponentComponentButtonFragment, unknown>;
+export const ComponentSectionHero1FragmentDoc = {"kind":"Document","definitions":[{"kind":"FragmentDefinition","name":{"kind":"Name","value":"ComponentSectionHero1"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"ComponentSectionHero1"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"title"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"ComponentComponentTypo"}}]}},{"kind":"Field","name":{"kind":"Name","value":"description"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"ComponentComponentTypo"}}]}},{"kind":"Field","name":{"kind":"Name","value":"firstButton"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"ComponentComponentButton"}}]}},{"kind":"Field","name":{"kind":"Name","value":"secondButton"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"ComponentComponentButton"}}]}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"ComponentComponentTypo"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"ComponentComponentTypo"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"text"}},{"kind":"Field","name":{"kind":"Name","value":"as"}},{"kind":"Field","name":{"kind":"Name","value":"highlightedIndex"}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"ComponentComponentButton"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"ComponentComponentButton"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"type"}},{"kind":"Field","name":{"kind":"Name","value":"target"}},{"kind":"Field","name":{"kind":"Name","value":"href"}},{"kind":"Field","name":{"kind":"Name","value":"disabled"}}]}}]} as unknown as DocumentNode<ComponentSectionHero1Fragment, unknown>;
+export const ComponentSectionHero2FragmentDoc = {"kind":"Document","definitions":[{"kind":"FragmentDefinition","name":{"kind":"Name","value":"ComponentSectionHero2"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"ComponentSectionHero2"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"title"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"ComponentComponentTypo"}}]}},{"kind":"Field","name":{"kind":"Name","value":"description"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"ComponentComponentTypo"}}]}},{"kind":"Field","name":{"kind":"Name","value":"firstButton"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"ComponentComponentButton"}}]}},{"kind":"Field","name":{"kind":"Name","value":"secondButton"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"ComponentComponentButton"}}]}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"ComponentComponentTypo"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"ComponentComponentTypo"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"text"}},{"kind":"Field","name":{"kind":"Name","value":"as"}},{"kind":"Field","name":{"kind":"Name","value":"highlightedIndex"}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"ComponentComponentButton"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"ComponentComponentButton"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"type"}},{"kind":"Field","name":{"kind":"Name","value":"target"}},{"kind":"Field","name":{"kind":"Name","value":"href"}},{"kind":"Field","name":{"kind":"Name","value":"disabled"}}]}}]} as unknown as DocumentNode<ComponentSectionHero2Fragment, unknown>;
+export const PagesDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"Pages"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"locale"}},"type":{"kind":"NamedType","name":{"kind":"Name","value":"I18NLocaleCode"}}},{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"filters"}},"type":{"kind":"NamedType","name":{"kind":"Name","value":"PageFiltersInput"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"pages"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"filters"},"value":{"kind":"Variable","name":{"kind":"Name","value":"filters"}}},{"kind":"Argument","name":{"kind":"Name","value":"locale"},"value":{"kind":"Variable","name":{"kind":"Name","value":"locale"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"data"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"attributes"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"path"}},{"kind":"Field","name":{"kind":"Name","value":"seo"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"description"}}]}},{"kind":"Field","name":{"kind":"Name","value":"layout"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"__typename"}},{"kind":"FragmentSpread","name":{"kind":"Name","value":"ComponentSectionHero1"}},{"kind":"FragmentSpread","name":{"kind":"Name","value":"ComponentSectionHero2"}}]}}]}}]}}]}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"ComponentComponentTypo"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"ComponentComponentTypo"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"text"}},{"kind":"Field","name":{"kind":"Name","value":"as"}},{"kind":"Field","name":{"kind":"Name","value":"highlightedIndex"}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"ComponentComponentButton"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"ComponentComponentButton"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"type"}},{"kind":"Field","name":{"kind":"Name","value":"target"}},{"kind":"Field","name":{"kind":"Name","value":"href"}},{"kind":"Field","name":{"kind":"Name","value":"disabled"}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"ComponentSectionHero1"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"ComponentSectionHero1"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"title"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"ComponentComponentTypo"}}]}},{"kind":"Field","name":{"kind":"Name","value":"description"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"ComponentComponentTypo"}}]}},{"kind":"Field","name":{"kind":"Name","value":"firstButton"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"ComponentComponentButton"}}]}},{"kind":"Field","name":{"kind":"Name","value":"secondButton"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"ComponentComponentButton"}}]}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"ComponentSectionHero2"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"ComponentSectionHero2"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"title"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"ComponentComponentTypo"}}]}},{"kind":"Field","name":{"kind":"Name","value":"description"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"ComponentComponentTypo"}}]}},{"kind":"Field","name":{"kind":"Name","value":"firstButton"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"ComponentComponentButton"}}]}},{"kind":"Field","name":{"kind":"Name","value":"secondButton"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"ComponentComponentButton"}}]}}]}}]} as unknown as DocumentNode<PagesQuery, PagesQueryVariables>;
