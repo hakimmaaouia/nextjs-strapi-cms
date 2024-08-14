@@ -2,6 +2,7 @@ import { FC } from "react";
 import { cva, type VariantProps } from "class-variance-authority";
 import Link from "next/link";
 import { cn } from "../../lib/utils";
+import { ExternalLink } from "lucide-react";
 
 const buttonVariants = cva(
   "inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
@@ -40,6 +41,7 @@ export interface IButtonProps
   target?: "_blank" | "_self" | "_parent" | "_top" | "framename";
   fullWidth?: boolean;
   href?: string;
+  isExternal?: boolean;
 }
 
 const MaybeLink: FC<IButtonProps> = ({
@@ -48,11 +50,13 @@ const MaybeLink: FC<IButtonProps> = ({
   type,
   children,
   className,
+  isExternal = false,
   ...props
 }) => {
   return href ? (
     <Link href={href} className={className} target={target}>
       {children}
+      {isExternal && <ExternalLink size={16} className=" ml-2" />}
     </Link>
   ) : (
     <button className={className} type={type} {...props}>
