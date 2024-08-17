@@ -2,14 +2,13 @@ import type { Meta, StoryObj } from "@storybook/react";
 import Nav from "./Nav";
 
 const meta: Meta<typeof Nav> = {
-  title: "Components/Nav",
+  title: "Layouts/Nav",
   component: Nav,
 };
 
 export default meta;
 type Story = StoryObj<typeof Nav>;
 
-// Sample data
 const links = [
   { title: "Home", href: "#" },
   { title: "About", href: "#" },
@@ -32,7 +31,7 @@ const links = [
   { title: "Contact", href: "#" },
 ];
 
-const cta = [
+export const cta = [
   { title: "Sign in", href: "#" },
   { title: "Sign up", href: "#" },
 ];
