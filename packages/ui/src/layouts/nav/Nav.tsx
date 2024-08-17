@@ -9,6 +9,7 @@ import {
   ChevronDown as DownIcon,
 } from "lucide-react";
 import Typo from "../../components/typo";
+import SectionLayout from "../sectionLayout";
 
 interface ILink {
   title: string;
@@ -25,7 +26,7 @@ interface ICta {
   href: string;
 }
 
-interface INavProps {
+export interface INavProps {
   links: (IDropdown | ILink)[];
   cta?: ICta[];
 }
@@ -135,40 +136,38 @@ const Nav: FC<INavProps> = ({ links, cta }) => {
   const [open, setOpen] = useState(false);
 
   return (
-    <section>
-      <div className="container">
-        <div className="mx-auto flex max-w-screen-xl flex-col p-5 md:flex-row md:items-center md:justify-between md:px-6 lg:px-8">
-          <div className="flex flex-row items-center justify-between lg:justify-start">
-            <Typo
-              as="h1"
-              size="h5"
-              color="black"
-              weight="bold"
-              className="lg:pr-8"
-            >
-              wickedblocks
-            </Typo>
-            <Button
-              size="icon"
-              className=" md:hidden"
-              onClick={() => setOpen(!open)}
-            >
-              {open ? <CloseIcon /> : <MenuIcon />}
-            </Button>
-          </div>
-          <nav
-            className={`${
-              open ? "flex" : "hidden"
-            } grow flex-col items-center border-black-600 pb-4 md:flex md:flex-row md:justify-end md:pb-0 lg:border-l-2 lg:pl-2`}
+    <SectionLayout>
+      <div className="flex flex-col py-5 md:flex-row md:items-center md:justify-between">
+        <div className="flex flex-row items-center justify-between lg:justify-start">
+          <Typo
+            as="h1"
+            size="h5"
+            color="black"
+            weight="bold"
+            className="lg:pr-8"
           >
-            <NavLinks links={links} />
-            <div className="md:flex-row flex flex-col list-none items-center gap-2 lg:ml-auto md:w-fit w-full mt-4 md:mt-0">
-              <NavCtaButtons cta={cta} />
-            </div>
-          </nav>
+            wickedblocks
+          </Typo>
+          <Button
+            size="icon"
+            className=" md:hidden"
+            onClick={() => setOpen(!open)}
+          >
+            {open ? <CloseIcon /> : <MenuIcon />}
+          </Button>
         </div>
+        <nav
+          className={`${
+            open ? "flex" : "hidden"
+          } grow flex-col items-center border-black-600 pb-4 md:flex md:flex-row md:justify-end md:pb-0 lg:border-l-2 lg:pl-2`}
+        >
+          <NavLinks links={links} />
+          <div className="md:flex-row flex flex-col list-none items-center gap-2 lg:ml-auto md:w-fit w-full mt-4 md:mt-0">
+            <NavCtaButtons cta={cta} />
+          </div>
+        </nav>
       </div>
-    </section>
+    </SectionLayout>
   );
 };
 

@@ -2,6 +2,7 @@ import Button from "../../components/button";
 import Typo from "../../components/typo";
 
 import { FC } from "react";
+import SectionLayout from "../sectionLayout";
 
 interface ILinkItem {
   title: string;
@@ -14,15 +15,15 @@ interface ILink {
   item: ILinkItem[];
 }
 
-interface IFooterProps {
+export interface IFooterProps {
   description: string;
   links: ILink[];
 }
 
 const Footer: FC<IFooterProps> = ({ description, links }) => {
   return (
-    <section>
-      <div className="bg-white">
+    <SectionLayout>
+      <div>
         <div className="container py-12 lg:py-16">
           <div className="xl:grid xl:grid-cols-3 xl:gap-8">
             <div className="text-white xl:col-span-1">
@@ -97,7 +98,7 @@ const Footer: FC<IFooterProps> = ({ description, links }) => {
           </div>
         </div>
       </div>
-    </section>
+    </SectionLayout>
   );
 };
 
