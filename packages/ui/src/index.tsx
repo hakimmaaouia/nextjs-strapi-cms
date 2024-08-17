@@ -4,10 +4,10 @@ import Image from "./components/image";
 import Typo from "./components/typo";
 import Collapsible from "./components/collapsible";
 import DropDownMenu from "./components/dropdownMenu";
-
+import GlobalLayout from "./layouts/globalLayout";
 //Layouts
-import Nav from "./layouts/nav";
-import Footer from "./layouts/footer";
+import Nav, { adaptor as navAdaptor } from "./layouts/nav";
+import Footer, { adaptor as footerAdaptor } from "./layouts/footer";
 
 // Sections
 import Hero1 from "./sections/heros/hero1";
@@ -19,7 +19,9 @@ export { GET_TYPO_FRAGMENT } from "./components/typo/typo.graphql";
 //export { Hero2 } from "./sections/heros/hero2";
 //export { Testimonial1 } from "./sections/testimonial/testimonial1";
 
+export { navAdaptor, footerAdaptor };
 export {
+  GlobalLayout,
   Collapsible,
   DropDownMenu,
   Button,
