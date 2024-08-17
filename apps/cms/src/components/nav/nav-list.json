@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_nav_nav_lists",
+  "info": {
+    "displayName": "NavList"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "items": {
+      "type": "component",
+      "repeatable": true,
+      "component": "nav.link"
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_nav_links",
+  "info": {
+    "displayName": "link",
+    "icon": "link",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "href": {
+      "type": "text"
+    },
+    "isExternal": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    }
+  }
+}
