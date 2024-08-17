@@ -10,7 +10,7 @@ const textMock = `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed d
         mollit anim id est laborum.`;
 
 const meta: Meta<ISectionLayoutProps> = {
-  title: "Components/SectionLayout",
+  title: "Layouts/SectionLayout",
   component: SectionLayout,
   tags: ["autodocs"],
   argTypes: {
