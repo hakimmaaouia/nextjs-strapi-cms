@@ -3,6 +3,6 @@ module.exports = {
   transpilePackages: ["@repo/ui"],
   reactStrictMode: true,
   images: {
-    domains: ["picsum.photos"],
+    domains: ["picsum.photos", "localhost"],
   },
 };
