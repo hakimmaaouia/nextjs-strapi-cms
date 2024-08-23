@@ -16,11 +16,6 @@
       "repeatable": false,
       "component": "component.typo"
     },
-    "image": {
-      "type": "component",
-      "repeatable": false,
-      "component": "component.image"
-    },
     "firstButton": {
       "type": "component",
       "repeatable": false,
@@ -30,6 +25,17 @@
       "type": "component",
       "repeatable": false,
       "component": "component.button"
+    },
+    "className": {
+      "type": "string"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
     }
   }
 }

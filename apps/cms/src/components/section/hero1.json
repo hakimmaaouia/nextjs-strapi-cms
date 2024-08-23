@@ -1,7 +1,8 @@
 {
   "collectionName": "components_section_hero1s",
   "info": {
-    "displayName": "Hero1"
+    "displayName": "Hero1",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -24,6 +25,17 @@
       "type": "component",
       "repeatable": false,
       "component": "component.button"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "className": {
+      "type": "string"
     }
   }
 }

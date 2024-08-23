@@ -1,7 +1,8 @@
 {
   "collectionName": "components_component_typos",
   "info": {
-    "displayName": "Typo"
+    "displayName": "Typo",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -16,7 +17,8 @@
         "span",
         "blockquote"
       ],
-      "required": false
+      "required": true,
+      "default": "span"
     },
     "text": {
       "type": "text",
