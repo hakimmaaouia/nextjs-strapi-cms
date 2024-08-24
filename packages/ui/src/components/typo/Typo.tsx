@@ -4,14 +4,20 @@ import { FC, Fragment } from "react";
 
 type asType = "h1" | "h2" | "h3" | "h4" | "p" | "span" | "blockquote";
 
-export interface ITypoProps
-  extends Omit<React.ButtonHTMLAttributes<HTMLBaseElement>, "color">,
-    VariantProps<typeof typoVariants>,
-    VariantProps<typeof highlightVariants> {
+export interface editableProps {
+  children: string;
   as: asType;
   highlightedIndex?: number[];
-  children: string;
 }
+
+export interface ITypoProps
+  extends Omit<
+      React.ButtonHTMLAttributes<HTMLBaseElement>,
+      "color" | "children"
+    >,
+    VariantProps<typeof typoVariants>,
+    VariantProps<typeof highlightVariants>,
+    editableProps {}
 
 const typoVariants = cva("tracking-tight text-primary", {
   variants: {
@@ -22,6 +28,7 @@ const typoVariants = cva("tracking-tight text-primary", {
       h4: "text-2xl",
       h5: "text-xl",
       p: "text-lg",
+      p2: "text-sm",
       span: "text-base",
       blockquote: "text-xl",
     },
