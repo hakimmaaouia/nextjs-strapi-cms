@@ -15,18 +15,25 @@ const imageVariants = cva("relative overflow-hidden", {
     radius: "medium",
   },
 });
-interface IImageProps extends VariantProps<typeof imageVariants> {
+
+export interface editableProps {
   alt: string;
   src: string;
+}
+
+interface IImageProps
+  extends VariantProps<typeof imageVariants>,
+    editableProps {
   width?: number;
   height?: number;
   fill?: boolean;
   loading?: loadingType;
   className?: string;
 }
+
 const Image: FC<IImageProps> = ({
-  alt,
   src,
+  alt,
   width,
   height,
   fill = false,
