@@ -15,10 +15,8 @@ export const GET_PAGE_QUERY = graphql(/* GraphQL */ `
           }
           layout {
             __typename
-            ... on ComponentSectionCardSlider {
-              id
-              title
-            }
+            ...ComponentSectionHero1
+            ...ComponentSectionHero2
           }
         }
       }
@@ -30,6 +28,7 @@ interface IGetPage {
   path: string;
   locale?: string;
 }
+
 export const getPage = async ({ path, locale = "en" }: IGetPage) => {
   return await client.request(PagesDocument, {
     filters: {
