@@ -15,5 +15,9 @@ export const GET_HERO2_FRAGMENT = graphql(`
     secondButton {
       ...ComponentComponentButton
     }
+    image {
+      ...Image
+    }
+    className
   }
 `);
