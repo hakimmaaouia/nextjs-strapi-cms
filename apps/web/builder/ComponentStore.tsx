@@ -1,6 +1,7 @@
 import { FC } from "react";
 import { TypedDocumentNode } from "@graphql-typed-document-node/core"; // Import the required type
 import { FragmentDefinitionNode } from "graphql";
+import { writeFileSync } from "fs";
 
 interface IRegisteredComponent<P, G> {
   component: FC<P>;
@@ -50,6 +51,14 @@ class ComponentsStore {
         />
       );
     });
+  }
+  generateGraphqlSchema() {
+    //TODO: Generate the GraphQL schema and write it to a file.
+    const schema = "test";
+    const outputPath = `${process.cwd()}/builder/graphql.ts`;
+    writeFileSync(outputPath, schema);
+
+    console.log(`GraphQL schema has been written to ${outputPath}`);
   }
 }
 
