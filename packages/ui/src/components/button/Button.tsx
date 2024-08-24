@@ -33,15 +33,26 @@ const buttonVariants = cva(
   }
 );
 
-export interface IButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
-    VariantProps<typeof buttonVariants> {
+export type buttonTarget =
+  | "_blank"
+  | "_self"
+  | "_parent"
+  | "_top"
+  | "framename";
+export interface editableProps {
   disabled?: boolean;
   type?: "submit" | "button" | "reset";
-  target?: "_blank" | "_self" | "_parent" | "_top" | "framename";
-  fullWidth?: boolean;
+  target?: buttonTarget;
   href?: string;
   isExternal?: boolean;
+  children: string;
+}
+
+export interface IButtonProps
+  extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, "children">,
+    VariantProps<typeof buttonVariants>,
+    editableProps {
+  fullWidth?: boolean;
 }
 
 const MaybeLink: FC<IButtonProps> = ({
