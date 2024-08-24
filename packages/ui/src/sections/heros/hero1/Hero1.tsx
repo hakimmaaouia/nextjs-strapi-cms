@@ -1,29 +1,78 @@
-import Button from "../../../components/button";
-import Typo from "../../../components/typo";
-import Image from "../../../components/image";
+import Typo, {
+  editableProps as typoEditableProps,
+} from "../../../components/typo";
+import Image, {
+  editableProps as imageEditableProps,
+} from "../../../components/image";
+import Button, {
+  editableProps as buttonEditableProps,
+} from "../../../components/button";
 import SectionLayout from "../../../layouts/sectionLayout";
+import { FC } from "react";
+import { cn } from "../../../lib/utils";
 
-const Hero1 = () => {
+export interface IHero1Props {
+  title: typoEditableProps;
+  description: typoEditableProps;
+  image: imageEditableProps;
+  firstButton: buttonEditableProps;
+  secondButton: buttonEditableProps;
+  className?: string;
+}
+
+const Hero1: FC<IHero1Props> = ({
+  title,
+  description,
+  image,
+  firstButton,
+  secondButton,
+  className,
+}) => {
   return (
-    <SectionLayout innerClassName="flex flex-col items-center justify-center">
-      <Typo as="h1" size="h1" weight="semibold" className="mb-6 text-center">
-        Medium length display headline
+    <SectionLayout
+      innerClassName={cn(
+        "flex flex-col items-center justify-center",
+        className
+      )}
+    >
+      <Typo
+        as={title.as}
+        size="h1"
+        weight="semibold"
+        className="mb-6 text-center"
+        highlightedIndex={title.highlightedIndex}
+      >
+        {title.children}
       </Typo>
       <Typo
-        as="p"
+        as={description.as}
+        highlightedIndex={description.highlightedIndex}
         size="span"
         color="gray"
         className="mb-8 max-w-xl text-center"
       >
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-        varius enim in eros elementum tristique. Vivamus lacinia odio vitae
-        vestibulum vestibulum.
+        {description.children}
       </Typo>
       <div className="mb-8 flex space-x-4">
-        <Button>Primary Button </Button>
-        <Button variant="outline">Secondary Button</Button>
+        <Button
+          href={firstButton.href}
+          target={firstButton.target}
+          type={firstButton.type}
+          disabled={firstButton.disabled}
+        >
+          {firstButton.children}
+        </Button>
+        <Button
+          href={secondButton.href}
+          target={secondButton.target}
+          type={secondButton.type}
+          disabled={secondButton.disabled}
+          variant="outline"
+        >
+          {secondButton.children}
+        </Button>
       </div>
-      <Image height={400} alt="dxgdxg" src="https://picsum.photos/1000/1000" />
+      <Image height={400} alt={image.alt} src={image.src} />
     </SectionLayout>
   );
 };
