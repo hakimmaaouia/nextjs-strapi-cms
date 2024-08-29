@@ -31,7 +31,7 @@ const links = [
   { title: "Contact", href: "#" },
 ];
 
-export const cta = [
+const cta = [
   { title: "Sign in", href: "#" },
   { title: "Sign up", href: "#" },
 ];

@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, ReactElement } from "react";
 import { cva, type VariantProps } from "class-variance-authority";
 import Link from "next/link";
 import { cn } from "../../lib/utils";
@@ -45,7 +45,7 @@ export interface editableProps {
   target?: buttonTarget;
   href?: string;
   isExternal?: boolean;
-  children: string;
+  children: ReactElement | string;
 }
 
 export interface IButtonProps

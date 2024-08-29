@@ -46,18 +46,11 @@ const SectionLayout: FC<ISectionLayoutProps> = ({
   sectionVariant = "default",
 }) => {
   return (
-    <div
-      className={cn(
-        className,
-        containerVariant({ backgroundColor }),
-        "bg-orange-500"
-      )}
-    >
+    <div className={cn(className, containerVariant({ backgroundColor }))}>
       <div
         className={cn(
           innerClassName,
-          innerContainerVariant({ sectionVariant }),
-          "bg-red-400"
+          innerContainerVariant({ sectionVariant })
         )}
       >
         {children}

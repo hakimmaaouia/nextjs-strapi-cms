@@ -11,45 +11,6 @@ export interface UtilSeo extends Schema.Component {
   };
 }
 
-export interface NavNavList extends Schema.Component {
-  collectionName: 'components_nav_nav_lists';
-  info: {
-    displayName: 'NavList';
-  };
-  attributes: {
-    title: Attribute.String;
-    items: Attribute.Component<'nav.link', true>;
-  };
-}
-
-export interface NavLink extends Schema.Component {
-  collectionName: 'components_nav_links';
-  info: {
-    displayName: 'link';
-    icon: 'link';
-    description: '';
-  };
-  attributes: {
-    title: Attribute.String;
-    href: Attribute.Text;
-    isExternal: Attribute.Boolean &
-      Attribute.Required &
-      Attribute.DefaultTo<false>;
-  };
-}
-
-export interface NavDropdown extends Schema.Component {
-  collectionName: 'components_nav_dropdowns';
-  info: {
-    displayName: 'Dropdown';
-    icon: 'arrowDown';
-  };
-  attributes: {
-    title: Attribute.String;
-    items: Attribute.Component<'nav.link', true>;
-  };
-}
-
 export interface SectionHero2 extends Schema.Component {
   collectionName: 'components_components_hero2s';
   info: {
@@ -89,6 +50,45 @@ export interface SectionCardSlider extends Schema.Component {
   };
   attributes: {
     title: Attribute.String;
+  };
+}
+
+export interface NavNavList extends Schema.Component {
+  collectionName: 'components_nav_nav_lists';
+  info: {
+    displayName: 'NavList';
+  };
+  attributes: {
+    title: Attribute.String;
+    items: Attribute.Component<'nav.link', true>;
+  };
+}
+
+export interface NavLink extends Schema.Component {
+  collectionName: 'components_nav_links';
+  info: {
+    displayName: 'link';
+    icon: 'link';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.String;
+    href: Attribute.Text;
+    isExternal: Attribute.Boolean &
+      Attribute.Required &
+      Attribute.DefaultTo<false>;
+  };
+}
+
+export interface NavDropdown extends Schema.Component {
+  collectionName: 'components_nav_dropdowns';
+  info: {
+    displayName: 'Dropdown';
+    icon: 'arrowDown';
+  };
+  attributes: {
+    title: Attribute.String;
+    items: Attribute.Component<'nav.link', true>;
   };
 }
 
@@ -146,12 +146,12 @@ declare module '@strapi/types' {
   export module Shared {
     export interface Components {
       'util.seo': UtilSeo;
-      'nav.nav-list': NavNavList;
-      'nav.link': NavLink;
-      'nav.dropdown': NavDropdown;
       'section.hero2': SectionHero2;
       'section.hero1': SectionHero1;
       'section.card-slider': SectionCardSlider;
+      'nav.nav-list': NavNavList;
+      'nav.link': NavLink;
+      'nav.dropdown': NavDropdown;
       'component.typo': ComponentTypo;
       'component.link': ComponentLink;
       'component.image': ComponentImage;

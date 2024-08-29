@@ -37,7 +37,7 @@ const Hero2: FC<IHero2Props> = ({
             as={title.as}
             size="h2"
             weight="semibold"
-            className="mb-8 flex max-w-6xl  text-gray-800"
+            className="mb-8  max-w-6xl  text-gray-800"
             highlightedIndex={title.highlightedIndex}
           >
             {title.children}
@@ -49,7 +49,7 @@ const Hero2: FC<IHero2Props> = ({
             size="p"
             color="gray"
             highlightedIndex={description.highlightedIndex}
-            className="mb-8 flex max-w-6xl  "
+            className="mb-8  max-w-6xl  "
           >
             {description.children}
           </Typo>
@@ -58,22 +58,24 @@ const Hero2: FC<IHero2Props> = ({
               {firstButton.children}
             </Button>
             <Button size="lg" variant="outline" {...secondButton}>
-              {secondButton.title}
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                className="ml-1 size-6"
-              >
-                <path
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M5 12h14m-4 4l4-4m-4-4l4 4"
-                ></path>
-              </svg>
+              <div className="flex gap-4">
+                {secondButton.children}
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  className="ml-1 size-6"
+                >
+                  <path
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 12h14m-4 4l4-4m-4-4l4 4"
+                  ></path>
+                </svg>
+              </div>
             </Button>
           </div>
         </div>

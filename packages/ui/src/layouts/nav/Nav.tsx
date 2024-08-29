@@ -66,15 +66,17 @@ const NavLinks: FC<{ links: (IDropdown | ILink)[] }> = ({ links }) => {
                       variant="link"
                       className="mt-2 flex gap-1 items-center px-4 py-2 md:mt-0"
                     >
-                      <Typo
-                        as="h3"
-                        size="p2"
-                        color="gray"
-                        className="hover:text-black-600"
-                      >
-                        {link.title}
-                      </Typo>
-                      <DownIcon />
+                      <div className="flex gap-2 items-center">
+                        <Typo
+                          as="h3"
+                          size="p2"
+                          color="gray"
+                          className="hover:text-black-600"
+                        >
+                          {link.title}
+                        </Typo>
+                        <DownIcon />
+                      </div>
                     </Button>
                   </DropdownMenu.DropdownMenuTrigger>
                   <DropdownMenu.DropdownMenuContent>

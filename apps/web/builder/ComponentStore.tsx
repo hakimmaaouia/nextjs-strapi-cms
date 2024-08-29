@@ -56,9 +56,9 @@ class ComponentsStore {
     //TODO: Generate the GraphQL schema and write it to a file.
     const schema = "test";
     const outputPath = `${process.cwd()}/builder/graphql.ts`;
-    writeFileSync(outputPath, schema);
+    //writeFileSync(outputPath, schema);
 
-    console.log(`GraphQL schema has been written to ${outputPath}`);
+    //console.log(`GraphQL schema has been written to ${outputPath}`);
   }
 }
 
