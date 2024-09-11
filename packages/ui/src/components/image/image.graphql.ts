@@ -10,3 +10,14 @@ export const GET_IMAGE_FRAGMENT = graphql(`
     }
   }
 `);
+
+export const Get_IMAGES_FRAGMENT = graphql(`
+  fragment Images on UploadFileRelationResponseCollection {
+    data {
+      attributes {
+        alternativeText
+        url
+      }
+    }
+  }
+`);

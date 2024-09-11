@@ -29,6 +29,7 @@ interface IImageProps
   fill?: boolean;
   loading?: loadingType;
   className?: string;
+  classNameInner?: string;
 }
 
 const Image: FC<IImageProps> = ({
@@ -38,6 +39,7 @@ const Image: FC<IImageProps> = ({
   height,
   fill = false,
   className,
+  classNameInner,
   loading = "lazy",
   radius,
 }) => {
@@ -53,7 +55,7 @@ const Image: FC<IImageProps> = ({
         src={src}
         alt={alt}
         loading={loading}
-        className="object-cover object-center"
+        className={cn("object-cover object-center", classNameInner)}
         fill={true}
       />
     </div>

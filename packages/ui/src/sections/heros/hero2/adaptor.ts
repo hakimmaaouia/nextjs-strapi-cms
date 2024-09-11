@@ -1,7 +1,7 @@
 import { FragmentType, useFragment } from "@repo/graphql/generated";
 import { IHero2Props } from "./Hero2";
 import { GET_HERO2_FRAGMENT } from "./hero2.graphql";
-import { adaptor as imageAdaptor } from "../../../components/image";
+import { imageAdaptor } from "../../../components/image";
 import { adaptor as buttonAdaptor } from "../../../components/button";
 import { adaptor as typoAdaptor } from "../../../components/typo";
 
