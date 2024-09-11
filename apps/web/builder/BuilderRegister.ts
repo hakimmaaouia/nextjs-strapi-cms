@@ -6,6 +6,12 @@ import {
   Hero2,
   GET_HERO2_FRAGMENT,
   hero2Adaptor,
+  Testimonial1,
+  testimonial1Adaptor,
+  GET_TESTIMONIAL1_FRAGMENT,
+  GET_LOGO1_FRAGMENT,
+  Logos1,
+  logo1Adaptor,
 } from "@repo/ui";
 
 export const Builder = new ComponentsStore();
@@ -20,6 +26,18 @@ Builder.addComponent({
   component: Hero2,
   adaptor: hero2Adaptor,
   graphql: GET_HERO2_FRAGMENT,
+});
+
+Builder.addComponent({
+  component: Testimonial1,
+  adaptor: testimonial1Adaptor,
+  graphql: GET_TESTIMONIAL1_FRAGMENT,
+});
+
+Builder.addComponent({
+  component: Logos1,
+  adaptor: logo1Adaptor,
+  graphql: GET_LOGO1_FRAGMENT,
 });
 
 Builder.generateGraphqlSchema();
