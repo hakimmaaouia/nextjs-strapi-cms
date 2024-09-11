@@ -924,7 +924,13 @@ export interface ApiPagePage extends Schema.CollectionType {
         };
       }>;
     layout: Attribute.DynamicZone<
-      ['section.card-slider', 'section.hero1', 'section.hero2']
+      [
+        'section.card-slider',
+        'section.hero1',
+        'section.hero2',
+        'section.testimonial1',
+        'section.logo1'
+      ]
     > &
       Attribute.SetPluginOptions<{
         i18n: {

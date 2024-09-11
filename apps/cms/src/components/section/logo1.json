@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_section_logo1s",
+  "info": {
+    "displayName": "Logos1",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "component",
+      "repeatable": false,
+      "component": "component.typo"
+    },
+    "logos": {
+      "type": "media",
+      "multiple": true,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "className": {
+      "type": "text"
+    }
+  }
+}

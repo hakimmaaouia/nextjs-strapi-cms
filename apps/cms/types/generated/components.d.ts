@@ -11,6 +11,38 @@ export interface UtilSeo extends Schema.Component {
   };
 }
 
+export interface SectionTestimonial1 extends Schema.Component {
+  collectionName: 'components_section_testimonial1s';
+  info: {
+    displayName: 'Testimonial1';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.Component<'component.typo'> & Attribute.Required;
+    description: Attribute.Component<'component.typo'> & Attribute.Required;
+    authorName: Attribute.Component<'component.typo'> & Attribute.Required;
+    image: Attribute.Media<'images'> & Attribute.Required;
+    avatar: Attribute.Media<'images'> & Attribute.Required;
+    isReverse: Attribute.Boolean &
+      Attribute.Required &
+      Attribute.DefaultTo<false>;
+    className: Attribute.String;
+  };
+}
+
+export interface SectionLogo1 extends Schema.Component {
+  collectionName: 'components_section_logo1s';
+  info: {
+    displayName: 'Logos1';
+    description: '';
+  };
+  attributes: {
+    text: Attribute.Component<'component.typo'>;
+    logos: Attribute.Media<'images', true> & Attribute.Required;
+    className: Attribute.Text;
+  };
+}
+
 export interface SectionHero2 extends Schema.Component {
   collectionName: 'components_components_hero2s';
   info: {
@@ -18,10 +50,10 @@ export interface SectionHero2 extends Schema.Component {
     description: '';
   };
   attributes: {
-    title: Attribute.Component<'component.typo'>;
-    description: Attribute.Component<'component.typo'>;
-    firstButton: Attribute.Component<'component.button'>;
-    secondButton: Attribute.Component<'component.button'>;
+    title: Attribute.Component<'component.typo'> & Attribute.Required;
+    description: Attribute.Component<'component.typo'> & Attribute.Required;
+    firstButton: Attribute.Component<'component.button'> & Attribute.Required;
+    secondButton: Attribute.Component<'component.button'> & Attribute.Required;
     className: Attribute.String;
     image: Attribute.Media<'images'> & Attribute.Required;
   };
@@ -34,10 +66,10 @@ export interface SectionHero1 extends Schema.Component {
     description: '';
   };
   attributes: {
-    title: Attribute.Component<'component.typo'>;
-    description: Attribute.Component<'component.typo'>;
-    firstButton: Attribute.Component<'component.button'>;
-    secondButton: Attribute.Component<'component.button'>;
+    title: Attribute.Component<'component.typo'> & Attribute.Required;
+    description: Attribute.Component<'component.typo'> & Attribute.Required;
+    firstButton: Attribute.Component<'component.button'> & Attribute.Required;
+    secondButton: Attribute.Component<'component.button'> & Attribute.Required;
     image: Attribute.Media<'images'> & Attribute.Required;
     className: Attribute.String;
   };
@@ -146,6 +178,8 @@ declare module '@strapi/types' {
   export module Shared {
     export interface Components {
       'util.seo': UtilSeo;
+      'section.testimonial1': SectionTestimonial1;
+      'section.logo1': SectionLogo1;
       'section.hero2': SectionHero2;
       'section.hero1': SectionHero1;
       'section.card-slider': SectionCardSlider;

@@ -9,22 +9,26 @@
     "title": {
       "type": "component",
       "repeatable": false,
-      "component": "component.typo"
+      "component": "component.typo",
+      "required": true
     },
     "description": {
       "type": "component",
       "repeatable": false,
-      "component": "component.typo"
+      "component": "component.typo",
+      "required": true
     },
     "firstButton": {
       "type": "component",
       "repeatable": false,
-      "component": "component.button"
+      "component": "component.button",
+      "required": true
     },
     "secondButton": {
       "type": "component",
       "repeatable": false,
-      "component": "component.button"
+      "component": "component.button",
+      "required": true
     },
     "image": {
       "type": "media",

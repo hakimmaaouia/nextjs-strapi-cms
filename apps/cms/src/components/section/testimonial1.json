@@ -1,7 +1,7 @@
 {
-  "collectionName": "components_components_hero2s",
+  "collectionName": "components_section_testimonial1s",
   "info": {
-    "displayName": "Hero2",
+    "displayName": "Testimonial1",
     "description": ""
   },
   "options": {},
@@ -18,20 +18,11 @@
       "component": "component.typo",
       "required": true
     },
-    "firstButton": {
+    "authorName": {
       "type": "component",
       "repeatable": false,
-      "component": "component.button",
+      "component": "component.typo",
       "required": true
-    },
-    "secondButton": {
-      "type": "component",
-      "repeatable": false,
-      "component": "component.button",
-      "required": true
-    },
-    "className": {
-      "type": "string"
     },
     "image": {
       "type": "media",
@@ -40,6 +31,22 @@
       "allowedTypes": [
         "images"
       ]
+    },
+    "avatar": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "isReverse": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "className": {
+      "type": "string"
     }
   }
 }
