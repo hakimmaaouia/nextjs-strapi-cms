@@ -13,6 +13,7 @@ import { TypedDocumentNode as DocumentNode } from '@graphql-typed-document-node/
  * Therefore it is highly recommended to use the babel or swc plugin for production.
  */
 const documents = {
+    "\n  query getPages {\n    pages {\n      data {\n        attributes {\n          path\n          publishedAt\n          updatedAt\n          locale\n          localizations {\n            data {\n              attributes {\n                locale\n                publishedAt\n                updatedAt\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n": types.GetPagesDocument,
     "\n  query Layout($locale: I18NLocaleCode) {\n    footer(locale: $locale) {\n      data {\n        attributes {\n          ...footer\n        }\n      }\n    }\n    header(locale: $locale) {\n      data {\n        attributes {\n          ...header\n        }\n      }\n    }\n  }\n": types.LayoutDocument,
     "\n  query Pages($locale: I18NLocaleCode, $filters: PageFiltersInput) {\n    pages(filters: $filters, locale: $locale) {\n      data {\n        attributes {\n          title\n          path\n          seo {\n            title\n            description\n          }\n          layout {\n            __typename\n            ...ComponentSectionHero1\n            ...ComponentSectionHero2\n            ...ComponentSectionTestimonial1\n            ...ComponentSectionLogo1\n          }\n        }\n      }\n    }\n  }\n": types.PagesDocument,
     "\n  fragment ComponentComponentButton on ComponentComponentButton {\n    id\n    title\n    type\n    target\n    href\n    disabled\n  }\n": types.ComponentComponentButtonFragmentDoc,
@@ -41,6 +42,10 @@ const documents = {
  */
 export function graphql(source: string): unknown;
 
+/**
+ * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ */
+export function graphql(source: "\n  query getPages {\n    pages {\n      data {\n        attributes {\n          path\n          publishedAt\n          updatedAt\n          locale\n          localizations {\n            data {\n              attributes {\n                locale\n                publishedAt\n                updatedAt\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n"): (typeof documents)["\n  query getPages {\n    pages {\n      data {\n        attributes {\n          path\n          publishedAt\n          updatedAt\n          locale\n          localizations {\n            data {\n              attributes {\n                locale\n                publishedAt\n                updatedAt\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n"];
 /**
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
