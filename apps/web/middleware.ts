@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { getLanguages, getDefaultLanguages } from "./app/lib/localization";
+import { getLanguages, getDefaultLanguages } from "./lib/localization";
 
 const lang = getLanguages();
 export function middleware(request) {
