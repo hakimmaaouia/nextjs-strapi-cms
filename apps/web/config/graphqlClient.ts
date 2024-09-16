@@ -1,8 +1,8 @@
 import { GraphQLClient } from "graphql-request";
 import { cache } from "react";
-import { apiKey, apiUrl } from "./var";
+import { env } from "./env";
 
-const endpoint = `${apiUrl}/graphql`;
+const endpoint = `${env.API_URL}/graphql`;
 export const revalidate = 3600;
 
 const client = new GraphQLClient(endpoint, {
@@ -10,7 +10,7 @@ const client = new GraphQLClient(endpoint, {
     return fetch(url, { ...params, next: { revalidate } });
   }),
   headers: {
-    Authorization: `Bearer ${apiKey}`,
+    Authorization: `Bearer ${env.API_SECRET}`,
   },
 });
 
