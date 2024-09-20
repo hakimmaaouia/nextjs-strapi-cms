@@ -8,6 +8,7 @@ export const env = createEnv({
   client: {},
   shared: {
     API_URL: z.string().url(),
+    BASE_URL: z.string().url(),
     NODE_ENV: z
       .enum(["development", "production", "test"])
       .default("development"),
@@ -16,5 +17,6 @@ export const env = createEnv({
     API_URL: process.env.API_URL,
     API_SECRET: process.env.API_SECRET,
     NODE_ENV: process.env.NODE_ENV,
+    BASE_URL: process.env.BASE_URL,
   },
 });

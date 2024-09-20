@@ -5,6 +5,7 @@ import {
   GetPagesQuery,
 } from "@repo/graphql/generated/graphql";
 import { MetadataRoute } from "next";
+import { env } from "../config/env";
 
 export const GET_PAGES_QUERY = graphql(/* GraphQL */ `
   query getPages {
@@ -40,7 +41,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   return pages.data.flatMap((page) => {
     const { path, publishedAt, updatedAt, locale, localizations } =
       page.attributes;
-    const baseUrl = "http://localhost:3000"; // Replace with your actual domain
+    const baseUrl = env.BASE_URL;
 
     const entries: MetadataRoute.Sitemap = [
       {
