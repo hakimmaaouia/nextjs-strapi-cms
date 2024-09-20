@@ -929,7 +929,8 @@ export interface ApiPagePage extends Schema.CollectionType {
         'section.hero1',
         'section.hero2',
         'section.testimonial1',
-        'section.logo1'
+        'section.logo1',
+        'section.features1'
       ]
     > &
       Attribute.SetPluginOptions<{

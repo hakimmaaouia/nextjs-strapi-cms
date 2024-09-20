@@ -16,7 +16,11 @@ import Testimonial1, {
   adaptor as testimonial1Adaptor,
 } from "./sections/testimonial/testimonial1";
 import Logos1, { adaptor as logo1Adaptor } from "./sections/logos/logos1";
+import Features1, {
+  adapter as features1Adapter,
+} from "./sections/features/features1";
 
+export { GET_FEATURES1_FRAGMENT } from "./sections/features/features1";
 export { GET_HERO1_FRAGMENT } from "./sections/heros/hero1";
 export { GET_HERO2_FRAGMENT } from "./sections/heros/hero2";
 export { GET_TESTIMONIAL1_FRAGMENT } from "./sections/testimonial/testimonial1";
@@ -33,6 +37,7 @@ export {
   hero2Adaptor,
   testimonial1Adaptor,
   logo1Adaptor,
+  features1Adapter,
 };
 export {
   GlobalLayout,
@@ -47,4 +52,5 @@ export {
   Logos1,
   Nav,
   Footer,
+  Features1,
 };

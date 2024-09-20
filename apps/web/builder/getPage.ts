@@ -19,6 +19,7 @@ export const GET_PAGE_QUERY = graphql(/* GraphQL */ `
             ...ComponentSectionHero2
             ...ComponentSectionTestimonial1
             ...ComponentSectionLogo1
+            ...ComponentSectionFeatures1
           }
         }
       }

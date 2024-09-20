@@ -81,6 +81,38 @@ export type ComponentComponentButtonInput = {
   type?: InputMaybe<Enum_Componentcomponentbutton_Type>;
 };
 
+export type ComponentComponentCardFeature = {
+  __typename?: 'ComponentComponentCardFeature';
+  button?: Maybe<ComponentComponentButton>;
+  description?: Maybe<Scalars['String']['output']>;
+  icon?: Maybe<ComponentComponentIcon>;
+  id: Scalars['ID']['output'];
+  title?: Maybe<Scalars['String']['output']>;
+};
+
+export type ComponentComponentCardFeatureFiltersInput = {
+  and?: InputMaybe<Array<InputMaybe<ComponentComponentCardFeatureFiltersInput>>>;
+  button?: InputMaybe<ComponentComponentButtonFiltersInput>;
+  description?: InputMaybe<StringFilterInput>;
+  icon?: InputMaybe<ComponentComponentIconFiltersInput>;
+  not?: InputMaybe<ComponentComponentCardFeatureFiltersInput>;
+  or?: InputMaybe<Array<InputMaybe<ComponentComponentCardFeatureFiltersInput>>>;
+  title?: InputMaybe<StringFilterInput>;
+};
+
+export type ComponentComponentIcon = {
+  __typename?: 'ComponentComponentIcon';
+  id: Scalars['ID']['output'];
+  name: Enum_Componentcomponenticon_Name;
+};
+
+export type ComponentComponentIconFiltersInput = {
+  and?: InputMaybe<Array<InputMaybe<ComponentComponentIconFiltersInput>>>;
+  name?: InputMaybe<StringFilterInput>;
+  not?: InputMaybe<ComponentComponentIconFiltersInput>;
+  or?: InputMaybe<Array<InputMaybe<ComponentComponentIconFiltersInput>>>;
+};
+
 export type ComponentComponentImage = {
   __typename?: 'ComponentComponentImage';
   id: Scalars['ID']['output'];
@@ -170,6 +202,21 @@ export type ComponentSectionCardSlider = {
   __typename?: 'ComponentSectionCardSlider';
   id: Scalars['ID']['output'];
   title?: Maybe<Scalars['String']['output']>;
+};
+
+export type ComponentSectionFeatures1 = {
+  __typename?: 'ComponentSectionFeatures1';
+  className?: Maybe<Scalars['String']['output']>;
+  features?: Maybe<Array<Maybe<ComponentComponentCardFeature>>>;
+  id: Scalars['ID']['output'];
+  title: ComponentComponentTypo;
+};
+
+
+export type ComponentSectionFeatures1FeaturesArgs = {
+  filters?: InputMaybe<ComponentComponentCardFeatureFiltersInput>;
+  pagination?: InputMaybe<PaginationArg>;
+  sort?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type ComponentSectionHero1 = {
@@ -280,6 +327,360 @@ export enum Enum_Componentcomponentbutton_Type {
   Submit = 'submit'
 }
 
+export enum Enum_Componentcomponenticon_Name {
+  AArrowDown = 'a_arrow_down',
+  AArrowUp = 'a_arrow_up',
+  ALargeSmall = 'a_large_small',
+  Accessibility = 'accessibility',
+  Activity = 'activity',
+  AirVent = 'air_vent',
+  Airplay = 'airplay',
+  AlarmClock = 'alarm_clock',
+  AlarmClockCheck = 'alarm_clock_check',
+  AlarmClockMinus = 'alarm_clock_minus',
+  AlarmClockOff = 'alarm_clock_off',
+  AlarmClockPlus = 'alarm_clock_plus',
+  AlarmSmoke = 'alarm_smoke',
+  Album = 'album',
+  AlignCenter = 'align_center',
+  AlignCenterHorizontal = 'align_center_horizontal',
+  AlignCenterVertical = 'align_center_vertical',
+  AlignEndHorizontal = 'align_end_horizontal',
+  AlignEndVertical = 'align_end_vertical',
+  AlignHorizontalDistributeCenter = 'align_horizontal_distribute_center',
+  AlignHorizontalDistributeEnd = 'align_horizontal_distribute_end',
+  AlignHorizontalDistributeStart = 'align_horizontal_distribute_start',
+  AlignHorizontalJustifyCenter = 'align_horizontal_justify_center',
+  AlignHorizontalJustifyEnd = 'align_horizontal_justify_end',
+  AlignHorizontalJustifyStart = 'align_horizontal_justify_start',
+  AlignHorizontalSpaceAround = 'align_horizontal_space_around',
+  AlignHorizontalSpaceBetween = 'align_horizontal_space_between',
+  AlignJustify = 'align_justify',
+  AlignLeft = 'align_left',
+  AlignRight = 'align_right',
+  AlignStartHorizontal = 'align_start_horizontal',
+  AlignStartVertical = 'align_start_vertical',
+  AlignVerticalDistributeCenter = 'align_vertical_distribute_center',
+  AlignVerticalDistributeEnd = 'align_vertical_distribute_end',
+  AlignVerticalDistributeStart = 'align_vertical_distribute_start',
+  AlignVerticalJustifyCenter = 'align_vertical_justify_center',
+  AlignVerticalJustifyEnd = 'align_vertical_justify_end',
+  AlignVerticalJustifyStart = 'align_vertical_justify_start',
+  AlignVerticalSpaceAround = 'align_vertical_space_around',
+  AlignVerticalSpaceBetween = 'align_vertical_space_between',
+  Ambulance = 'ambulance',
+  Ampersand = 'ampersand',
+  Ampersands = 'ampersands',
+  Anchor = 'anchor',
+  Angry = 'angry',
+  Annoyed = 'annoyed',
+  Antenna = 'antenna',
+  Anvil = 'anvil',
+  Aperture = 'aperture',
+  AppWindow = 'app_window',
+  AppWindowMac = 'app_window_mac',
+  Apple = 'apple',
+  Archive = 'archive',
+  ArchiveRestore = 'archive_restore',
+  ArchiveX = 'archive_x',
+  Armchair = 'armchair',
+  ArrowBigDown = 'arrow_big_down',
+  ArrowBigDownDash = 'arrow_big_down_dash',
+  ArrowBigLeft = 'arrow_big_left',
+  ArrowBigLeftDash = 'arrow_big_left_dash',
+  ArrowBigRight = 'arrow_big_right',
+  ArrowBigRightDash = 'arrow_big_right_dash',
+  ArrowBigUp = 'arrow_big_up',
+  ArrowBigUpDash = 'arrow_big_up_dash',
+  ArrowDown = 'arrow_down',
+  ArrowDown_0_1 = 'arrow_down_0_1',
+  ArrowDown_1_0 = 'arrow_down_1_0',
+  ArrowDownAZ = 'arrow_down_a_z',
+  ArrowDownFromLine = 'arrow_down_from_line',
+  ArrowDownLeft = 'arrow_down_left',
+  ArrowDownNarrowWide = 'arrow_down_narrow_wide',
+  ArrowDownRight = 'arrow_down_right',
+  ArrowDownToDot = 'arrow_down_to_dot',
+  ArrowDownToLine = 'arrow_down_to_line',
+  ArrowDownUp = 'arrow_down_up',
+  ArrowDownWideNarrow = 'arrow_down_wide_narrow',
+  ArrowDownZA = 'arrow_down_z_a',
+  ArrowLeft = 'arrow_left',
+  ArrowLeftFromLine = 'arrow_left_from_line',
+  ArrowLeftRight = 'arrow_left_right',
+  ArrowLeftToLine = 'arrow_left_to_line',
+  ArrowRight = 'arrow_right',
+  ArrowRightFromLine = 'arrow_right_from_line',
+  ArrowRightLeft = 'arrow_right_left',
+  ArrowRightToLine = 'arrow_right_to_line',
+  ArrowUp = 'arrow_up',
+  ArrowUp_0_1 = 'arrow_up_0_1',
+  ArrowUp_1_0 = 'arrow_up_1_0',
+  ArrowUpAZ = 'arrow_up_a_z',
+  ArrowUpDown = 'arrow_up_down',
+  ArrowUpFromDot = 'arrow_up_from_dot',
+  ArrowUpFromLine = 'arrow_up_from_line',
+  ArrowUpLeft = 'arrow_up_left',
+  ArrowUpNarrowWide = 'arrow_up_narrow_wide',
+  ArrowUpRight = 'arrow_up_right',
+  ArrowUpToLine = 'arrow_up_to_line',
+  ArrowUpWideNarrow = 'arrow_up_wide_narrow',
+  ArrowUpZA = 'arrow_up_z_a',
+  ArrowsUpFromLine = 'arrows_up_from_line',
+  Asterisk = 'asterisk',
+  AtSign = 'at_sign',
+  Atom = 'atom',
+  AudioLines = 'audio_lines',
+  AudioWaveform = 'audio_waveform',
+  Award = 'award',
+  Axe = 'axe',
+  Axis_3d = 'axis_3d',
+  Baby = 'baby',
+  Backpack = 'backpack',
+  Badge = 'badge',
+  BadgeAlert = 'badge_alert',
+  BadgeCent = 'badge_cent',
+  BadgeCheck = 'badge_check',
+  BadgeDollarSign = 'badge_dollar_sign',
+  BadgeEuro = 'badge_euro',
+  BadgeHelp = 'badge_help',
+  BadgeIndianRupee = 'badge_indian_rupee',
+  BadgeInfo = 'badge_info',
+  BadgeJapaneseYen = 'badge_japanese_yen',
+  BadgeMinus = 'badge_minus',
+  BadgePercent = 'badge_percent',
+  BadgePlus = 'badge_plus',
+  BadgePoundSterling = 'badge_pound_sterling',
+  BadgeRussianRuble = 'badge_russian_ruble',
+  BadgeSwissFranc = 'badge_swiss_franc',
+  BadgeX = 'badge_x',
+  BaggageClaim = 'baggage_claim',
+  Ban = 'ban',
+  Banana = 'banana',
+  Banknote = 'banknote',
+  BarChart = 'bar_chart',
+  BarChart_2 = 'bar_chart_2',
+  BarChart_3 = 'bar_chart_3',
+  BarChart_4 = 'bar_chart_4',
+  BarChartBig = 'bar_chart_big',
+  BarChartHorizontal = 'bar_chart_horizontal',
+  BarChartHorizontalBig = 'bar_chart_horizontal_big',
+  Barcode = 'barcode',
+  Baseline = 'baseline',
+  Bath = 'bath',
+  Battery = 'battery',
+  BatteryCharging = 'battery_charging',
+  BatteryFull = 'battery_full',
+  BatteryLow = 'battery_low',
+  BatteryMedium = 'battery_medium',
+  BatteryWarning = 'battery_warning',
+  Beaker = 'beaker',
+  Bean = 'bean',
+  BeanOff = 'bean_off',
+  Bed = 'bed',
+  BedDouble = 'bed_double',
+  BedSingle = 'bed_single',
+  Beef = 'beef',
+  Beer = 'beer',
+  Bell = 'bell',
+  BellDot = 'bell_dot',
+  BellMinus = 'bell_minus',
+  BellOff = 'bell_off',
+  BellPlus = 'bell_plus',
+  BellRing = 'bell_ring',
+  Bike = 'bike',
+  Binary = 'binary',
+  Biohazard = 'biohazard',
+  Bird = 'bird',
+  Bitcoin = 'bitcoin',
+  Blinds = 'blinds',
+  Blocks = 'blocks',
+  Bluetooth = 'bluetooth',
+  BluetoothConnected = 'bluetooth_connected',
+  BluetoothOff = 'bluetooth_off',
+  BluetoothSearching = 'bluetooth_searching',
+  Bold = 'bold',
+  Bomb = 'bomb',
+  Bone = 'bone',
+  Book = 'book',
+  BookA = 'book_a',
+  BookAudio = 'book_audio',
+  BookCheck = 'book_check',
+  BookCopy = 'book_copy',
+  BookDown = 'book_down',
+  BookHeadphones = 'book_headphones',
+  BookHeart = 'book_heart',
+  BookImage = 'book_image',
+  BookKey = 'book_key',
+  BookLock = 'book_lock',
+  BookMarked = 'book_marked',
+  BookMinus = 'book_minus',
+  BookOpen = 'book_open',
+  BookOpenCheck = 'book_open_check',
+  BookOpenText = 'book_open_text',
+  BookPlus = 'book_plus',
+  BookText = 'book_text',
+  BookType = 'book_type',
+  BookUp = 'book_up',
+  BookUp_2 = 'book_up_2',
+  BookUser = 'book_user',
+  BookX = 'book_x',
+  Bookmark = 'bookmark',
+  BookmarkCheck = 'bookmark_check',
+  BookmarkMinus = 'bookmark_minus',
+  BookmarkPlus = 'bookmark_plus',
+  BookmarkX = 'bookmark_x',
+  BoomBox = 'boom_box',
+  Bot = 'bot',
+  Box = 'box',
+  BoxSelect = 'box_select',
+  Boxes = 'boxes',
+  BracesAsterisk = 'braces_asterisk',
+  BracesCurly = 'braces_curly',
+  BracesParentheses = 'braces_parentheses',
+  BracesSquare = 'braces_square',
+  Brackets = 'brackets',
+  BracketsCurly = 'brackets_curly',
+  BracketsParentheses = 'brackets_parentheses',
+  BracketsSquare = 'brackets_square',
+  Brain = 'brain',
+  BrainCircuit = 'brain_circuit',
+  BrainCog = 'brain_cog',
+  Briefcase = 'briefcase',
+  BringToFront = 'bring_to_front',
+  Brush = 'brush',
+  Bug = 'bug',
+  BugOff = 'bug_off',
+  BugPlay = 'bug_play',
+  Building = 'building',
+  Building_2 = 'building_2',
+  Bus = 'bus',
+  BusFront = 'bus_front',
+  CableCar = 'cable_car',
+  Cake = 'cake',
+  CakeSlice = 'cake_slice',
+  Calculator = 'calculator',
+  Calendar = 'calendar',
+  CalendarCheck = 'calendar_check',
+  CalendarCheck_2 = 'calendar_check_2',
+  CalendarClock = 'calendar_clock',
+  CalendarDays = 'calendar_days',
+  CalendarHeart = 'calendar_heart',
+  CalendarMinus = 'calendar_minus',
+  CalendarOff = 'calendar_off',
+  CalendarPlus = 'calendar_plus',
+  CalendarRange = 'calendar_range',
+  CalendarSearch = 'calendar_search',
+  CalendarX = 'calendar_x',
+  CalendarX_2 = 'calendar_x_2',
+  Camera = 'camera',
+  CameraOff = 'camera_off',
+  Candy = 'candy',
+  CandyCane = 'candy_cane',
+  CandyOff = 'candy_off',
+  Car = 'car',
+  CarFront = 'car_front',
+  CarTaxiFront = 'car_taxi_front',
+  Caravan = 'caravan',
+  Carrot = 'carrot',
+  CaseLower = 'case_lower',
+  CaseSensitive = 'case_sensitive',
+  CaseUpper = 'case_upper',
+  CassetteTape = 'cassette_tape',
+  Cast = 'cast',
+  Castle = 'castle',
+  Cat = 'cat',
+  Check = 'check',
+  CheckCheck = 'check_check',
+  CheckCircle = 'check_circle',
+  CheckCircle_2 = 'check_circle_2',
+  CheckSquare = 'check_square',
+  CheckSquare_2 = 'check_square_2',
+  ChefHat = 'chef_hat',
+  Cherry = 'cherry',
+  ChevronDown = 'chevron_down',
+  ChevronDownCircle = 'chevron_down_circle',
+  ChevronDownSquare = 'chevron_down_square',
+  ChevronFirst = 'chevron_first',
+  ChevronLast = 'chevron_last',
+  ChevronLeft = 'chevron_left',
+  ChevronLeftCircle = 'chevron_left_circle',
+  ChevronLeftSquare = 'chevron_left_square',
+  ChevronRight = 'chevron_right',
+  ChevronRightCircle = 'chevron_right_circle',
+  ChevronRightSquare = 'chevron_right_square',
+  ChevronUp = 'chevron_up',
+  ChevronUpCircle = 'chevron_up_circle',
+  ChevronUpSquare = 'chevron_up_square',
+  ChevronsDown = 'chevrons_down',
+  ChevronsDownUp = 'chevrons_down_up',
+  ChevronsLeft = 'chevrons_left',
+  ChevronsLeftRight = 'chevrons_left_right',
+  ChevronsRight = 'chevrons_right',
+  ChevronsRightLeft = 'chevrons_right_left',
+  ChevronsUp = 'chevrons_up',
+  ChevronsUpDown = 'chevrons_up_down',
+  Chrome = 'chrome',
+  Church = 'church',
+  Cigarette = 'cigarette',
+  CigaretteOff = 'cigarette_off',
+  Circle = 'circle',
+  CircleDashed = 'circle_dashed',
+  CircleDollarSign = 'circle_dollar_sign',
+  CircleDot = 'circle_dot',
+  CircleDotDashed = 'circle_dot_dashed',
+  CircleEllipsis = 'circle_ellipsis',
+  CircleEqual = 'circle_equal',
+  CircleOff = 'circle_off',
+  CircleSlash = 'circle_slash',
+  CircleSlash_2 = 'circle_slash_2',
+  CircuitBoard = 'circuit_board',
+  Citrus = 'citrus',
+  Clapperboard = 'clapperboard',
+  Clipboard = 'clipboard',
+  ClipboardCheck = 'clipboard_check',
+  ClipboardCopy = 'clipboard_copy',
+  ClipboardEdit = 'clipboard_edit',
+  ClipboardList = 'clipboard_list',
+  ClipboardPaste = 'clipboard_paste',
+  ClipboardSignature = 'clipboard_signature',
+  ClipboardType = 'clipboard_type',
+  ClipboardX = 'clipboard_x',
+  Clock = 'clock',
+  Clock_1 = 'clock_1',
+  Clock_2 = 'clock_2',
+  Clock_3 = 'clock_3',
+  Clock_4 = 'clock_4',
+  Clock_5 = 'clock_5',
+  Clock_6 = 'clock_6',
+  Clock_7 = 'clock_7',
+  Clock_8 = 'clock_8',
+  Clock_9 = 'clock_9',
+  Clock_10 = 'clock_10',
+  Clock_11 = 'clock_11',
+  Clock_12 = 'clock_12',
+  Cloud = 'cloud',
+  CloudCog = 'cloud_cog',
+  CloudDrizzle = 'cloud_drizzle',
+  CloudFog = 'cloud_fog',
+  CloudHail = 'cloud_hail',
+  CloudLightning = 'cloud_lightning',
+  CloudMoon = 'cloud_moon',
+  CloudMoonRain = 'cloud_moon_rain',
+  CloudOff = 'cloud_off',
+  CloudRain = 'cloud_rain',
+  CloudRainWind = 'cloud_rain_wind',
+  CloudSnow = 'cloud_snow',
+  CloudSun = 'cloud_sun',
+  CloudSunRain = 'cloud_sun_rain',
+  Cloudy = 'cloudy',
+  Clover = 'clover',
+  Club = 'club',
+  Code = 'code',
+  Code_2 = 'code_2',
+  CodeSquareBrackets = 'code_square_brackets'
+}
+
 export enum Enum_Componentcomponenttypo_As {
   Blockquote = 'blockquote',
   H1 = 'h1',
@@ -372,7 +773,7 @@ export type FooterRelationResponseCollection = {
   data: Array<FooterEntity>;
 };
 
-export type GenericMorph = ComponentComponentButton | ComponentComponentImage | ComponentComponentLink | ComponentComponentTypo | ComponentNavDropdown | ComponentNavLink | ComponentNavNavList | ComponentSectionCardSlider | ComponentSectionHero1 | ComponentSectionHero2 | ComponentSectionLogo1 | ComponentSectionTestimonial1 | ComponentUtilSeo | Footer | Header | I18NLocale | Page | UploadFile | UploadFolder | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsUser;
+export type GenericMorph = ComponentComponentButton | ComponentComponentCardFeature | ComponentComponentIcon | ComponentComponentImage | ComponentComponentLink | ComponentComponentTypo | ComponentNavDropdown | ComponentNavLink | ComponentNavNavList | ComponentSectionCardSlider | ComponentSectionFeatures1 | ComponentSectionHero1 | ComponentSectionHero2 | ComponentSectionLogo1 | ComponentSectionTestimonial1 | ComponentUtilSeo | Footer | Header | I18NLocale | Page | UploadFile | UploadFolder | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsUser;
 
 export type Header = {
   __typename?: 'Header';
@@ -828,7 +1229,7 @@ export type PageInput = {
   title?: InputMaybe<Scalars['String']['input']>;
 };
 
-export type PageLayoutDynamicZone = ComponentSectionCardSlider | ComponentSectionHero1 | ComponentSectionHero2 | ComponentSectionLogo1 | ComponentSectionTestimonial1 | Error;
+export type PageLayoutDynamicZone = ComponentSectionCardSlider | ComponentSectionFeatures1 | ComponentSectionHero1 | ComponentSectionHero2 | ComponentSectionLogo1 | ComponentSectionTestimonial1 | Error;
 
 export type PageRelationResponseCollection = {
   __typename?: 'PageRelationResponseCollection';
@@ -1389,6 +1790,9 @@ export type PagesQueryVariables = Exact<{
 
 
 export type PagesQuery = { __typename?: 'Query', pages?: { __typename?: 'PageEntityResponseCollection', data: Array<{ __typename?: 'PageEntity', attributes?: { __typename?: 'Page', title?: string | null, path?: string | null, seo?: { __typename?: 'ComponentUtilSeo', title?: string | null, description?: string | null } | null, layout?: Array<{ __typename: 'ComponentSectionCardSlider' } | (
+          { __typename: 'ComponentSectionFeatures1' }
+          & { ' $fragmentRefs'?: { 'ComponentSectionFeatures1Fragment': ComponentSectionFeatures1Fragment } }
+        ) | (
           { __typename: 'ComponentSectionHero1' }
           & { ' $fragmentRefs'?: { 'ComponentSectionHero1Fragment': ComponentSectionHero1Fragment } }
         ) | (
@@ -1404,6 +1808,8 @@ export type PagesQuery = { __typename?: 'Query', pages?: { __typename?: 'PageEnt
 
 export type ComponentComponentButtonFragment = { __typename?: 'ComponentComponentButton', id: string, title?: string | null, type?: Enum_Componentcomponentbutton_Type | null, target?: Enum_Componentcomponentbutton_Target | null, href?: string | null, disabled?: boolean | null } & { ' $fragmentName'?: 'ComponentComponentButtonFragment' };
 
+export type ComponentComponentIconFragment = { __typename?: 'ComponentComponentIcon', id: string, name: Enum_Componentcomponenticon_Name } & { ' $fragmentName'?: 'ComponentComponentIconFragment' };
+
 export type ImageFragment = { __typename?: 'UploadFileEntityResponse', data?: { __typename?: 'UploadFileEntity', attributes?: { __typename?: 'UploadFile', alternativeText?: string | null, url: string } | null } | null } & { ' $fragmentName'?: 'ImageFragment' };
 
 export type ImagesFragment = { __typename?: 'UploadFileRelationResponseCollection', data: Array<{ __typename?: 'UploadFileEntity', attributes?: { __typename?: 'UploadFile', alternativeText?: string | null, url: string } | null }> } & { ' $fragmentName'?: 'ImagesFragment' };
@@ -1413,6 +1819,17 @@ export type ComponentComponentTypoFragment = { __typename?: 'ComponentComponentT
 export type FooterFragment = { __typename?: 'Footer', description?: string | null, nav?: Array<{ __typename?: 'ComponentNavNavList', title?: string | null, items?: Array<{ __typename?: 'ComponentNavLink', title?: string | null, href?: string | null, isExternal: boolean } | null> | null } | null> | null } & { ' $fragmentName'?: 'FooterFragment' };
 
 export type HeaderFragment = { __typename?: 'Header', cta?: Array<{ __typename?: 'ComponentComponentButton', id: string, title?: string | null, type?: Enum_Componentcomponentbutton_Type | null, target?: Enum_Componentcomponentbutton_Target | null, href?: string | null, disabled?: boolean | null } | null> | null, nav?: Array<{ __typename: 'ComponentNavDropdown', title?: string | null, items?: Array<{ __typename?: 'ComponentNavLink', title?: string | null, href?: string | null, isExternal: boolean } | null> | null } | { __typename: 'ComponentNavLink', title?: string | null, href?: string | null, isExternal: boolean } | { __typename: 'Error' } | null> | null } & { ' $fragmentName'?: 'HeaderFragment' };
+
+export type ComponentSectionFeatures1Fragment = { __typename?: 'ComponentSectionFeatures1', className?: string | null, title: (
+    { __typename?: 'ComponentComponentTypo' }
+    & { ' $fragmentRefs'?: { 'ComponentComponentTypoFragment': ComponentComponentTypoFragment } }
+  ), features?: Array<{ __typename?: 'ComponentComponentCardFeature', title?: string | null, description?: string | null, icon?: (
+      { __typename?: 'ComponentComponentIcon' }
+      & { ' $fragmentRefs'?: { 'ComponentComponentIconFragment': ComponentComponentIconFragment } }
+    ) | null, button?: (
+      { __typename?: 'ComponentComponentButton' }
+      & { ' $fragmentRefs'?: { 'ComponentComponentButtonFragment': ComponentComponentButtonFragment } }
+    ) | null } | null> | null } & { ' $fragmentName'?: 'ComponentSectionFeatures1Fragment' };
 
 export type ComponentSectionHero1Fragment = { __typename?: 'ComponentSectionHero1', className?: string | null, title: (
     { __typename?: 'ComponentComponentTypo' }
@@ -1476,7 +1893,9 @@ export type ComponentSectionTestimonial1Fragment = { __typename?: 'ComponentSect
 export const FooterFragmentDoc = {"kind":"Document","definitions":[{"kind":"FragmentDefinition","name":{"kind":"Name","value":"footer"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"Footer"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"nav"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"items"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"href"}},{"kind":"Field","name":{"kind":"Name","value":"isExternal"}}]}}]}},{"kind":"Field","name":{"kind":"Name","value":"description"}}]}}]} as unknown as DocumentNode<FooterFragment, unknown>;
 export const HeaderFragmentDoc = {"kind":"Document","definitions":[{"kind":"FragmentDefinition","name":{"kind":"Name","value":"header"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"Header"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"cta"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"type"}},{"kind":"Field","name":{"kind":"Name","value":"target"}},{"kind":"Field","name":{"kind":"Name","value":"href"}},{"kind":"Field","name":{"kind":"Name","value":"disabled"}}]}},{"kind":"Field","name":{"kind":"Name","value":"nav"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"__typename"}},{"kind":"InlineFragment","typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"ComponentNavLink"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"href"}},{"kind":"Field","name":{"kind":"Name","value":"isExternal"}}]}},{"kind":"InlineFragment","typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"ComponentNavDropdown"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"items"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"href"}},{"kind":"Field","name":{"kind":"Name","value":"isExternal"}}]}}]}}]}}]}}]} as unknown as DocumentNode<HeaderFragment, unknown>;
 export const ComponentComponentTypoFragmentDoc = {"kind":"Document","definitions":[{"kind":"FragmentDefinition","name":{"kind":"Name","value":"ComponentComponentTypo"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"ComponentComponentTypo"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"text"}},{"kind":"Field","name":{"kind":"Name","value":"as"}},{"kind":"Field","name":{"kind":"Name","value":"highlightedIndex"}}]}}]} as unknown as DocumentNode<ComponentComponentTypoFragment, unknown>;
+export const ComponentComponentIconFragmentDoc = {"kind":"Document","definitions":[{"kind":"FragmentDefinition","name":{"kind":"Name","value":"ComponentComponentIcon"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"ComponentComponentIcon"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"name"}}]}}]} as unknown as DocumentNode<ComponentComponentIconFragment, unknown>;
 export const ComponentComponentButtonFragmentDoc = {"kind":"Document","definitions":[{"kind":"FragmentDefinition","name":{"kind":"Name","value":"ComponentComponentButton"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"ComponentComponentButton"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"type"}},{"kind":"Field","name":{"kind":"Name","value":"target"}},{"kind":"Field","name":{"kind":"Name","value":"href"}},{"kind":"Field","name":{"kind":"Name","value":"disabled"}}]}}]} as unknown as DocumentNode<ComponentComponentButtonFragment, unknown>;
+export const ComponentSectionFeatures1FragmentDoc = {"kind":"Document","definitions":[{"kind":"FragmentDefinition","name":{"kind":"Name","value":"ComponentSectionFeatures1"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"ComponentSectionFeatures1"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"title"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"ComponentComponentTypo"}}]}},{"kind":"Field","name":{"kind":"Name","value":"className"}},{"kind":"Field","name":{"kind":"Name","value":"features"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"description"}},{"kind":"Field","name":{"kind":"Name","value":"icon"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"ComponentComponentIcon"}}]}},{"kind":"Field","name":{"kind":"Name","value":"button"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"ComponentComponentButton"}}]}}]}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"ComponentComponentTypo"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"ComponentComponentTypo"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"text"}},{"kind":"Field","name":{"kind":"Name","value":"as"}},{"kind":"Field","name":{"kind":"Name","value":"highlightedIndex"}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"ComponentComponentIcon"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"ComponentComponentIcon"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"name"}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"ComponentComponentButton"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"ComponentComponentButton"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"type"}},{"kind":"Field","name":{"kind":"Name","value":"target"}},{"kind":"Field","name":{"kind":"Name","value":"href"}},{"kind":"Field","name":{"kind":"Name","value":"disabled"}}]}}]} as unknown as DocumentNode<ComponentSectionFeatures1Fragment, unknown>;
 export const ImageFragmentDoc = {"kind":"Document","definitions":[{"kind":"FragmentDefinition","name":{"kind":"Name","value":"Image"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"UploadFileEntityResponse"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"data"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"attributes"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"alternativeText"}},{"kind":"Field","name":{"kind":"Name","value":"url"}}]}}]}}]}}]} as unknown as DocumentNode<ImageFragment, unknown>;
 export const ComponentSectionHero1FragmentDoc = {"kind":"Document","definitions":[{"kind":"FragmentDefinition","name":{"kind":"Name","value":"ComponentSectionHero1"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"ComponentSectionHero1"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"title"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"ComponentComponentTypo"}}]}},{"kind":"Field","name":{"kind":"Name","value":"description"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"ComponentComponentTypo"}}]}},{"kind":"Field","name":{"kind":"Name","value":"firstButton"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"ComponentComponentButton"}}]}},{"kind":"Field","name":{"kind":"Name","value":"secondButton"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"ComponentComponentButton"}}]}},{"kind":"Field","name":{"kind":"Name","value":"image"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"Image"}}]}},{"kind":"Field","name":{"kind":"Name","value":"className"}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"ComponentComponentTypo"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"ComponentComponentTypo"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"text"}},{"kind":"Field","name":{"kind":"Name","value":"as"}},{"kind":"Field","name":{"kind":"Name","value":"highlightedIndex"}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"ComponentComponentButton"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"ComponentComponentButton"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"type"}},{"kind":"Field","name":{"kind":"Name","value":"target"}},{"kind":"Field","name":{"kind":"Name","value":"href"}},{"kind":"Field","name":{"kind":"Name","value":"disabled"}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"Image"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"UploadFileEntityResponse"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"data"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"attributes"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"alternativeText"}},{"kind":"Field","name":{"kind":"Name","value":"url"}}]}}]}}]}}]} as unknown as DocumentNode<ComponentSectionHero1Fragment, unknown>;
 export const ComponentSectionHero2FragmentDoc = {"kind":"Document","definitions":[{"kind":"FragmentDefinition","name":{"kind":"Name","value":"ComponentSectionHero2"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"ComponentSectionHero2"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"title"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"ComponentComponentTypo"}}]}},{"kind":"Field","name":{"kind":"Name","value":"description"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"ComponentComponentTypo"}}]}},{"kind":"Field","name":{"kind":"Name","value":"firstButton"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"ComponentComponentButton"}}]}},{"kind":"Field","name":{"kind":"Name","value":"secondButton"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"ComponentComponentButton"}}]}},{"kind":"Field","name":{"kind":"Name","value":"image"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"Image"}}]}},{"kind":"Field","name":{"kind":"Name","value":"className"}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"ComponentComponentTypo"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"ComponentComponentTypo"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"text"}},{"kind":"Field","name":{"kind":"Name","value":"as"}},{"kind":"Field","name":{"kind":"Name","value":"highlightedIndex"}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"ComponentComponentButton"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"ComponentComponentButton"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"type"}},{"kind":"Field","name":{"kind":"Name","value":"target"}},{"kind":"Field","name":{"kind":"Name","value":"href"}},{"kind":"Field","name":{"kind":"Name","value":"disabled"}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"Image"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"UploadFileEntityResponse"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"data"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"attributes"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"alternativeText"}},{"kind":"Field","name":{"kind":"Name","value":"url"}}]}}]}}]}}]} as unknown as DocumentNode<ComponentSectionHero2Fragment, unknown>;
@@ -1485,4 +1904,4 @@ export const ComponentSectionLogo1FragmentDoc = {"kind":"Document","definitions"
 export const ComponentSectionTestimonial1FragmentDoc = {"kind":"Document","definitions":[{"kind":"FragmentDefinition","name":{"kind":"Name","value":"ComponentSectionTestimonial1"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"ComponentSectionTestimonial1"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"title"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"ComponentComponentTypo"}}]}},{"kind":"Field","alias":{"kind":"Name","value":"description"},"name":{"kind":"Name","value":"description"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"ComponentComponentTypo"}}]}},{"kind":"Field","name":{"kind":"Name","value":"authorName"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"ComponentComponentTypo"}}]}},{"kind":"Field","name":{"kind":"Name","value":"image"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"Image"}}]}},{"kind":"Field","name":{"kind":"Name","value":"avatar"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"Image"}}]}},{"kind":"Field","name":{"kind":"Name","value":"isReverse"}},{"kind":"Field","name":{"kind":"Name","value":"className"}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"ComponentComponentTypo"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"ComponentComponentTypo"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"text"}},{"kind":"Field","name":{"kind":"Name","value":"as"}},{"kind":"Field","name":{"kind":"Name","value":"highlightedIndex"}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"Image"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"UploadFileEntityResponse"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"data"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"attributes"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"alternativeText"}},{"kind":"Field","name":{"kind":"Name","value":"url"}}]}}]}}]}}]} as unknown as DocumentNode<ComponentSectionTestimonial1Fragment, unknown>;
 export const GetPagesDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"getPages"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"pages"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"data"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"attributes"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"path"}},{"kind":"Field","name":{"kind":"Name","value":"publishedAt"}},{"kind":"Field","name":{"kind":"Name","value":"updatedAt"}},{"kind":"Field","name":{"kind":"Name","value":"locale"}},{"kind":"Field","name":{"kind":"Name","value":"localizations"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"data"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"attributes"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"locale"}},{"kind":"Field","name":{"kind":"Name","value":"publishedAt"}},{"kind":"Field","name":{"kind":"Name","value":"updatedAt"}}]}}]}}]}}]}}]}}]}}]}}]} as unknown as DocumentNode<GetPagesQuery, GetPagesQueryVariables>;
 export const LayoutDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"Layout"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"locale"}},"type":{"kind":"NamedType","name":{"kind":"Name","value":"I18NLocaleCode"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"footer"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"locale"},"value":{"kind":"Variable","name":{"kind":"Name","value":"locale"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"data"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"attributes"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"footer"}}]}}]}}]}},{"kind":"Field","name":{"kind":"Name","value":"header"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"locale"},"value":{"kind":"Variable","name":{"kind":"Name","value":"locale"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"data"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"attributes"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"header"}}]}}]}}]}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"footer"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"Footer"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"nav"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"items"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"href"}},{"kind":"Field","name":{"kind":"Name","value":"isExternal"}}]}}]}},{"kind":"Field","name":{"kind":"Name","value":"description"}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"header"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"Header"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"cta"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"type"}},{"kind":"Field","name":{"kind":"Name","value":"target"}},{"kind":"Field","name":{"kind":"Name","value":"href"}},{"kind":"Field","name":{"kind":"Name","value":"disabled"}}]}},{"kind":"Field","name":{"kind":"Name","value":"nav"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"__typename"}},{"kind":"InlineFragment","typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"ComponentNavLink"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"href"}},{"kind":"Field","name":{"kind":"Name","value":"isExternal"}}]}},{"kind":"InlineFragment","typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"ComponentNavDropdown"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"items"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"href"}},{"kind":"Field","name":{"kind":"Name","value":"isExternal"}}]}}]}}]}}]}}]} as unknown as DocumentNode<LayoutQuery, LayoutQueryVariables>;
-export const PagesDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"Pages"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"locale"}},"type":{"kind":"NamedType","name":{"kind":"Name","value":"I18NLocaleCode"}}},{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"filters"}},"type":{"kind":"NamedType","name":{"kind":"Name","value":"PageFiltersInput"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"pages"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"filters"},"value":{"kind":"Variable","name":{"kind":"Name","value":"filters"}}},{"kind":"Argument","name":{"kind":"Name","value":"locale"},"value":{"kind":"Variable","name":{"kind":"Name","value":"locale"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"data"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"attributes"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"path"}},{"kind":"Field","name":{"kind":"Name","value":"seo"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"description"}}]}},{"kind":"Field","name":{"kind":"Name","value":"layout"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"__typename"}},{"kind":"FragmentSpread","name":{"kind":"Name","value":"ComponentSectionHero1"}},{"kind":"FragmentSpread","name":{"kind":"Name","value":"ComponentSectionHero2"}},{"kind":"FragmentSpread","name":{"kind":"Name","value":"ComponentSectionTestimonial1"}},{"kind":"FragmentSpread","name":{"kind":"Name","value":"ComponentSectionLogo1"}}]}}]}}]}}]}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"ComponentComponentTypo"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"ComponentComponentTypo"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"text"}},{"kind":"Field","name":{"kind":"Name","value":"as"}},{"kind":"Field","name":{"kind":"Name","value":"highlightedIndex"}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"ComponentComponentButton"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"ComponentComponentButton"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"type"}},{"kind":"Field","name":{"kind":"Name","value":"target"}},{"kind":"Field","name":{"kind":"Name","value":"href"}},{"kind":"Field","name":{"kind":"Name","value":"disabled"}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"Image"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"UploadFileEntityResponse"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"data"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"attributes"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"alternativeText"}},{"kind":"Field","name":{"kind":"Name","value":"url"}}]}}]}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"Images"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"UploadFileRelationResponseCollection"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"data"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"attributes"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"alternativeText"}},{"kind":"Field","name":{"kind":"Name","value":"url"}}]}}]}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"ComponentSectionHero1"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"ComponentSectionHero1"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"title"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"ComponentComponentTypo"}}]}},{"kind":"Field","name":{"kind":"Name","value":"description"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"ComponentComponentTypo"}}]}},{"kind":"Field","name":{"kind":"Name","value":"firstButton"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"ComponentComponentButton"}}]}},{"kind":"Field","name":{"kind":"Name","value":"secondButton"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"ComponentComponentButton"}}]}},{"kind":"Field","name":{"kind":"Name","value":"image"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"Image"}}]}},{"kind":"Field","name":{"kind":"Name","value":"className"}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"ComponentSectionHero2"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"ComponentSectionHero2"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"title"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"ComponentComponentTypo"}}]}},{"kind":"Field","name":{"kind":"Name","value":"description"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"ComponentComponentTypo"}}]}},{"kind":"Field","name":{"kind":"Name","value":"firstButton"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"ComponentComponentButton"}}]}},{"kind":"Field","name":{"kind":"Name","value":"secondButton"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"ComponentComponentButton"}}]}},{"kind":"Field","name":{"kind":"Name","value":"image"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"Image"}}]}},{"kind":"Field","name":{"kind":"Name","value":"className"}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"ComponentSectionTestimonial1"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"ComponentSectionTestimonial1"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"title"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"ComponentComponentTypo"}}]}},{"kind":"Field","alias":{"kind":"Name","value":"description"},"name":{"kind":"Name","value":"description"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"ComponentComponentTypo"}}]}},{"kind":"Field","name":{"kind":"Name","value":"authorName"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"ComponentComponentTypo"}}]}},{"kind":"Field","name":{"kind":"Name","value":"image"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"Image"}}]}},{"kind":"Field","name":{"kind":"Name","value":"avatar"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"Image"}}]}},{"kind":"Field","name":{"kind":"Name","value":"isReverse"}},{"kind":"Field","name":{"kind":"Name","value":"className"}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"ComponentSectionLogo1"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"ComponentSectionLogo1"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"text"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"ComponentComponentTypo"}}]}},{"kind":"Field","name":{"kind":"Name","value":"logos"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"Images"}}]}},{"kind":"Field","name":{"kind":"Name","value":"className"}}]}}]} as unknown as DocumentNode<PagesQuery, PagesQueryVariables>;
+export const PagesDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"Pages"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"locale"}},"type":{"kind":"NamedType","name":{"kind":"Name","value":"I18NLocaleCode"}}},{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"filters"}},"type":{"kind":"NamedType","name":{"kind":"Name","value":"PageFiltersInput"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"pages"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"filters"},"value":{"kind":"Variable","name":{"kind":"Name","value":"filters"}}},{"kind":"Argument","name":{"kind":"Name","value":"locale"},"value":{"kind":"Variable","name":{"kind":"Name","value":"locale"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"data"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"attributes"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"path"}},{"kind":"Field","name":{"kind":"Name","value":"seo"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"description"}}]}},{"kind":"Field","name":{"kind":"Name","value":"layout"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"__typename"}},{"kind":"FragmentSpread","name":{"kind":"Name","value":"ComponentSectionHero1"}},{"kind":"FragmentSpread","name":{"kind":"Name","value":"ComponentSectionHero2"}},{"kind":"FragmentSpread","name":{"kind":"Name","value":"ComponentSectionTestimonial1"}},{"kind":"FragmentSpread","name":{"kind":"Name","value":"ComponentSectionLogo1"}},{"kind":"FragmentSpread","name":{"kind":"Name","value":"ComponentSectionFeatures1"}}]}}]}}]}}]}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"ComponentComponentTypo"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"ComponentComponentTypo"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"text"}},{"kind":"Field","name":{"kind":"Name","value":"as"}},{"kind":"Field","name":{"kind":"Name","value":"highlightedIndex"}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"ComponentComponentButton"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"ComponentComponentButton"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"type"}},{"kind":"Field","name":{"kind":"Name","value":"target"}},{"kind":"Field","name":{"kind":"Name","value":"href"}},{"kind":"Field","name":{"kind":"Name","value":"disabled"}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"Image"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"UploadFileEntityResponse"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"data"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"attributes"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"alternativeText"}},{"kind":"Field","name":{"kind":"Name","value":"url"}}]}}]}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"Images"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"UploadFileRelationResponseCollection"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"data"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"attributes"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"alternativeText"}},{"kind":"Field","name":{"kind":"Name","value":"url"}}]}}]}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"ComponentComponentIcon"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"ComponentComponentIcon"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"name"}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"ComponentSectionHero1"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"ComponentSectionHero1"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"title"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"ComponentComponentTypo"}}]}},{"kind":"Field","name":{"kind":"Name","value":"description"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"ComponentComponentTypo"}}]}},{"kind":"Field","name":{"kind":"Name","value":"firstButton"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"ComponentComponentButton"}}]}},{"kind":"Field","name":{"kind":"Name","value":"secondButton"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"ComponentComponentButton"}}]}},{"kind":"Field","name":{"kind":"Name","value":"image"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"Image"}}]}},{"kind":"Field","name":{"kind":"Name","value":"className"}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"ComponentSectionHero2"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"ComponentSectionHero2"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"title"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"ComponentComponentTypo"}}]}},{"kind":"Field","name":{"kind":"Name","value":"description"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"ComponentComponentTypo"}}]}},{"kind":"Field","name":{"kind":"Name","value":"firstButton"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"ComponentComponentButton"}}]}},{"kind":"Field","name":{"kind":"Name","value":"secondButton"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"ComponentComponentButton"}}]}},{"kind":"Field","name":{"kind":"Name","value":"image"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"Image"}}]}},{"kind":"Field","name":{"kind":"Name","value":"className"}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"ComponentSectionTestimonial1"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"ComponentSectionTestimonial1"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"title"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"ComponentComponentTypo"}}]}},{"kind":"Field","alias":{"kind":"Name","value":"description"},"name":{"kind":"Name","value":"description"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"ComponentComponentTypo"}}]}},{"kind":"Field","name":{"kind":"Name","value":"authorName"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"ComponentComponentTypo"}}]}},{"kind":"Field","name":{"kind":"Name","value":"image"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"Image"}}]}},{"kind":"Field","name":{"kind":"Name","value":"avatar"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"Image"}}]}},{"kind":"Field","name":{"kind":"Name","value":"isReverse"}},{"kind":"Field","name":{"kind":"Name","value":"className"}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"ComponentSectionLogo1"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"ComponentSectionLogo1"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"text"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"ComponentComponentTypo"}}]}},{"kind":"Field","name":{"kind":"Name","value":"logos"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"Images"}}]}},{"kind":"Field","name":{"kind":"Name","value":"className"}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"ComponentSectionFeatures1"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"ComponentSectionFeatures1"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"title"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"ComponentComponentTypo"}}]}},{"kind":"Field","name":{"kind":"Name","value":"className"}},{"kind":"Field","name":{"kind":"Name","value":"features"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"description"}},{"kind":"Field","name":{"kind":"Name","value":"icon"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"ComponentComponentIcon"}}]}},{"kind":"Field","name":{"kind":"Name","value":"button"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"ComponentComponentButton"}}]}}]}}]}}]} as unknown as DocumentNode<PagesQuery, PagesQueryVariables>;
